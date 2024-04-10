@@ -1,0 +1,22 @@
+<div class="product-tile">
+    <div class="product-tile-display">
+        <img [src]="imageSrc" />
+        <div class="product-tile-tag">
+            <div class="product-tile-tag-text">{{tagText}}</div>
+        </div>
+    </div>
+    <div class="product-tile-info">
+        <div class="product-tile-info-category">
+            {{productCategory}}</div>
+        <div class="product-tile-info-price">
+            ${{finalPriceToDisplay}}</div>
+        <div *ngIf="priceWithoutPromo !== undefined">
+            <div class="product-tile-info-price-no-promo">
+                ${{priceWithoutPromo}}</div>
+        </div>
+
+        <div
+        class="product-tile-info-name">
+            {{productName}}</div>
+    </div>
+</div>

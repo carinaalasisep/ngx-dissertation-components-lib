@@ -1,0 +1,89 @@
+.product-tile {
+    width: 312px;
+    height: 478px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 18px;
+    display: inline-flex;
+    font-family: Inter, sans-serif;
+
+    &-display {
+        width: 312px;
+        height: 400px;
+        position: relative;
+        font-family: Inter, sans-serif;
+    }
+
+    &-tag {
+        width: 52px;
+        height: 24px;
+        left: 0px;
+        top: 22px;
+        position: absolute;
+        background: #1E2832;
+        display: flex;
+        justify-content: center;
+        font-family: Inter, sans-serif;
+
+        &-text {
+            color: white;
+            align-content: center;
+            font-weight: bold;
+        }
+    }
+
+    &-info {
+        width: 292px;
+        height: 60px;
+        position: relative;
+        font-family: Inter, sans-serif;
+
+        &-category {
+            left: 0px;
+            top: 38px;
+            position: absolute;
+            color: rgba(0, 0, 0, 0.50);
+            font-size: 16px;
+            font-weight: 400;
+            text-transform: capitalize;
+            word-wrap: break-word;
+        }
+
+        &-name {
+            left: 0px;
+            top: 0px;
+            position: absolute;
+            color: black;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: capitalize;
+            word-wrap: break-word;
+        }
+
+        &-price {
+            left: 232px;
+            top: 38px;
+            position: absolute;
+            text-align: right;
+            color: #FF6F61;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: capitalize;
+            word-wrap: break-word;
+
+            &-no-promo {
+                left: 168px;
+                top: 40px;
+                position: absolute;
+                text-align: right;
+                color: rgba(0, 0, 0, 0.50);
+                font-size: 14px;
+                font-weight: 600;
+                text-decoration: line-through;
+                text-transform: capitalize;
+                word-wrap: break-word;
+            }
+        }
+    }
+}
