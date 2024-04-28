@@ -1,3 +1,5 @@
+@import '@fontsource/open-sans'; // Defaults to weight 400
+
 .product-tile {
     width: 312px;
     height: 478px;
@@ -6,13 +8,13 @@
     align-items: center;
     gap: 18px;
     display: inline-flex;
-    font-family: Inter, sans-serif;
+    font-family: "Open Sans";
 
     &-display {
         width: 312px;
         height: 400px;
         position: relative;
-        font-family: Inter, sans-serif;
+        font-family: "Open Sans";
     }
 
     &-tag {
@@ -24,7 +26,7 @@
         background: #1E2832;
         display: flex;
         justify-content: center;
-        font-family: Inter, sans-serif;
+        font-family: "Open Sans";
 
         &-text {
             color: white;
@@ -37,7 +39,7 @@
         width: 292px;
         height: 60px;
         position: relative;
-        font-family: Inter, sans-serif;
+        font-family: "Open Sans";
 
         &-category {
             left: 0px;
