@@ -1,60 +1,138 @@
 @import '@fontsource/open-sans';
+@import '../../../styles/abstract/functions.scss';
 
-/* CSS */
-.button-56 {
-    align-items: center;
-    background-color: #fee6e3;
-    border: 2px solid #111;
-    border-radius: 8px;
-    box-sizing: border-box;
-    color: #111;
-    cursor: pointer;
-    display: flex;
+.kpg-button {
+	background-color: colors("black");
+	color: colors("black");
+	border: 1px solid colors("black");
+
+	border-radius: 0;
+	position: relative;
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	align-content: space-around;
+	width: inherit;
+	overflow: hidden;
+	word-break: keep-all;
+	cursor: pointer;
+
+	&.large {
     font-family: "Open Sans";
-    font-size: 16px;
-    height: 48px;
-    justify-content: center;
-    line-height: 24px;
-    max-width: 100%;
-    padding: 0 25px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
-  
-  .button-56:after {
-    background-color: #111;
-    border-radius: 8px;
-    content: "";
-    display: block;
-    height: 48px;
-    left: 0;
-    width: 100%;
-    position: absolute;
-    top: -2px;
-    transform: translate(8px, 8px);
-    transition: transform .2s ease-out;
-    z-index: -1;
-  }
-  
-  .button-56:hover:after {
-    transform: translate(0, 0);
-  }
-  
-  .button-56:active {
-    background-color: #ffdeda;
-    outline: 0;
-  }
-  
-  .button-56:hover {
-    outline: 0;
-  }
-  
-  @media (min-width: 768px) {
-    .button-56 {
-      padding: 0 40px;
-    }
-  }
+		padding: 14px 36px 15px 36px;
+		height: 48px;
+	}
+
+	&.default {
+    font-family: "Open Sans";
+		padding: 12px 32px 13px 32px;
+		height: 42px;
+	}
+
+	&.default-narrow {
+    font-family: "Open Sans";
+		padding: 12px 15px 13px 15px;
+		height: 42px;
+	}
+
+	&.small {
+    font-family: "Open Sans";
+		padding: 9px 32px 10px 32px;
+		height: 36px;
+	}
+
+	&.small-narrow {
+    font-family: "Open Sans";
+		padding: 9px 16px 10px 16px;
+		height: 36px;
+	}
+
+	&.extra-small {
+    font-family: "Open Sans";
+		padding: 7px 30px 7px 30px;
+		height: 26px;
+	}
+
+	&.extra-small-narrow {
+    font-family: "Open Sans";
+		padding: 7px 10px 7px 10px;
+		height: 26px;
+	}
+
+	.button-container {
+		display: flex;
+		align-items: center;
+
+		span {
+			transition: margin 0.25s ease-in-out, padding 0.25s ease-in-out;
+			will-change: opacity;
+			padding-bottom: 0;
+			display: block;
+			pointer-events: none;
+			border-color: colors("black");
+
+			&::after {
+				position: absolute;
+				content: " ";
+				display: block;
+				width: 0;
+				height: 0;
+				bottom: 0;
+				opacity: 0;
+				transition: all 0.25s ease-in-out;
+				border-bottom: 1px solid colors("black");
+			}
+		}
+
+		&:hover span,
+		&:focus span {
+			padding-bottom: 2px;
+			margin-top: -2px;
+
+			&::after,
+			&:focus span::after {
+				width: 100%;
+				opacity: 1;
+			}
+		}
+	}
+
+	&.black {
+		color: colors("black");
+
+		&:active {
+			opacity: 0.75;
+		}
+
+		&.disabled {
+      opacity: 0.5;
+			pointer-events: none;
+		}
+	}
+
+	&.white {
+		color: colors("white");
+		background: colors("white");
+
+		&:active {
+			background: colors("white");
+		}
+
+		span:after {
+			border-bottom: 1px solid colors("white");
+		}
+
+		&.disabled {
+			opacity: 0.5;
+		}
+	}
+
+	&.extra-small-narrow {
+		&:hover span,
+		&:focus span {
+			padding-bottom: 0px;
+			margin-top: 0px;
+		}
+	}
+}
