@@ -1,9 +1,9 @@
 @import '@fontsource/open-sans';
 @import '../../../styles/abstract/functions.scss';
 
-.kpg-button {
+.button-container {
 	background-color: colors("black");
-	color: colors("black");
+	color: colors("white");
 	border: 1px solid colors("black");
 
 	border-radius: 0;
@@ -24,15 +24,9 @@
 		height: 48px;
 	}
 
-	&.default {
+	&.medium {
     font-family: "Open Sans";
 		padding: 12px 32px 13px 32px;
-		height: 42px;
-	}
-
-	&.default-narrow {
-    font-family: "Open Sans";
-		padding: 12px 15px 13px 15px;
 		height: 42px;
 	}
 
@@ -42,27 +36,10 @@
 		height: 36px;
 	}
 
-	&.small-narrow {
-    font-family: "Open Sans";
-		padding: 9px 16px 10px 16px;
-		height: 36px;
-	}
-
-	&.extra-small {
-    font-family: "Open Sans";
-		padding: 7px 30px 7px 30px;
-		height: 26px;
-	}
-
-	&.extra-small-narrow {
-    font-family: "Open Sans";
-		padding: 7px 10px 7px 10px;
-		height: 26px;
-	}
-
-	.button-container {
+	.button-container-span {
 		display: flex;
 		align-items: center;
+		padding: 5px 15px;
 
 		span {
 			transition: margin 0.25s ease-in-out, padding 0.25s ease-in-out;
@@ -99,9 +76,11 @@
 	}
 
 	&.black {
-		color: colors("black");
+		color: colors("white");
+    background: colors("black");
 
 		&:active {
+      background: colors("black");
 			opacity: 0.75;
 		}
 
@@ -125,14 +104,6 @@
 
 		&.disabled {
 			opacity: 0.5;
-		}
-	}
-
-	&.extra-small-narrow {
-		&:hover span,
-		&:focus span {
-			padding-bottom: 0px;
-			margin-top: 0px;
 		}
 	}
 }

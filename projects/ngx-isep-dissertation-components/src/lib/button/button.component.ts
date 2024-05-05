@@ -22,7 +22,7 @@ export class ButtonComponent implements OnChanges{
 
   @Output() buttonClick = new EventEmitter<void>();
 
-  @HostBinding('class') hostClass = 'isep-lib-button';
+  @HostBinding('class') hostClass = 'button-container';
 
   ngOnChanges() {
 		this.updateHostClass(
@@ -39,7 +39,7 @@ export class ButtonComponent implements OnChanges{
 		isDisabled: boolean,
 		isSelected: boolean,
 	) {
-		const classes = ['isep-lib-button', `${size}`, `${color}`];
+		const classes = ['button-container', `${size}`, `${color}`];
 
 		if (isDisabled) {
 			classes.push('disabled');
