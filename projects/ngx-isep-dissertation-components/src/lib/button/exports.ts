@@ -1,3 +1,5 @@
 export * from "./button.component"
 export * from "./button.module"
 export * from "./button-color.enum"
+export * from "./button-size.enum"
+export * from "./button-icon.enum"

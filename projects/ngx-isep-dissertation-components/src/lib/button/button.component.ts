@@ -1,6 +1,7 @@
 import { Component, EventEmitter, HostBinding, Input, OnChanges, Output } from '@angular/core';
 import { ButtonColor } from './button-color.enum';
 import { ButtonSize } from './button-size.enum';
+import { ButtonIcon } from './button-icon.enum';
 
 @Component({
   selector: 'isep-lib-button',
@@ -14,7 +15,10 @@ export class ButtonComponent implements OnChanges{
   @Input()
   public size: ButtonSize = ButtonSize.MEDIUM;
 
-  @Input() label!: string;
+  @Input()
+  public icon: ButtonIcon | undefined;
+
+  @Input() label?: string;
 
   @Input() disabled: boolean = false;
 

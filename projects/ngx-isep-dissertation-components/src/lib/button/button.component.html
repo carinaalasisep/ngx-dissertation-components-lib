@@ -1,2 +1,6 @@
 <!-- HTML !-->
-<div class="button-container"><div class="button-container-span"><span>{{label}}</span></div></div>
+<div class="button-container">
+    <div *ngIf="icon">
+        <span class="material-icons-round">{{icon}}</span></div>
+    <div class="button-container-span"><span>{{label}}</span></div>
+</div>
