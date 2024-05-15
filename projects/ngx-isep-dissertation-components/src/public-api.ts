@@ -7,3 +7,5 @@ export * from './lib/ngx-isep-dissertation-components.component';
 export * from './lib/ngx-isep-dissertation-components.module';
 export * from './lib/button/exports';
 export * from './lib/product-tile/exports';
+export * from './lib/select/exports';
+export * from './lib/icon/exports';

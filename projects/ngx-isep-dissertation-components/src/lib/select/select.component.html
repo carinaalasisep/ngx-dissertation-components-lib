@@ -1,0 +1,7 @@
+    <select
+        class="custom-select" #items (change)="onSelected(items.value)">
+        <option value="" selected disabled hidden>Select size...</option>
+        <option *ngFor="let option of options">{{option}}</option>
+
+    </select>
+    
