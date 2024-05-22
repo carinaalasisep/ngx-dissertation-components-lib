@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { SelectModel } from './select-model';
 
 @Component({
   selector: 'isep-lib-select',
@@ -6,11 +7,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./select.component.scss']
 })
 export class SelectComponent {
-  @Input() options: string[] = [];
+  @Input() options: SelectModel[] = [];
 
-  @Output() selectedItem = new EventEmitter<string>();
+  @Output() selectedItem = new EventEmitter<number>();
 
   onSelected(value: string) {
-    this.selectedItem.emit(value);
+    const selectedId = +value;
+    this.selectedItem.emit(selectedId);
   }
 }
