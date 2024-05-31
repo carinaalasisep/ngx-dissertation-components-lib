@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MultiSelectModel } from './multi-select-model';
 
 @Component({
   selector: 'isep-lib-multi-select',
@@ -6,13 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./multi-select.component.scss']
 })
 export class MultiSelectComponent {
-  categories = [
-    { id: 1, name: 'Coats', selected: false },
-    { id: 2, name: 'Dresses', selected: false },
-    { id: 3, name: 'Pants', selected: false },
-    { id: 4, name: 'Shorts', selected: false },
-    { id: 5, name: 'Category With A Long Name', selected: false }
-  ];
+  @Input() title: string = "";
+  @Input() options: MultiSelectModel[] = [];
+
   dropdownOpen = false;
 
   constructor() { }
@@ -23,7 +20,7 @@ export class MultiSelectComponent {
     this.dropdownOpen = !this.dropdownOpen;
   }
 
-  toggleCategorySelection(category: any): void {
-    category.selected = !category.selected;
+  toggleCategorySelection(option: MultiSelectModel): void {
+    option.isSelected = !option.isSelected;
   }
 }

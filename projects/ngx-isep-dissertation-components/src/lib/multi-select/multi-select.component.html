@@ -1,13 +1,13 @@
 <div class="multi-select">
     <div class="multi-select-header" (click)="toggleDropdown()">
-      <span>Category</span>
+      <span>{{title}}</span>
       <span class="material-icons-round" [class.open]="dropdownOpen">chevron_right</span>
       <!-- <span class="dropdown-icon" [class.open]="dropdownOpen"></span> -->
     </div>
     <div class="multi-select-dropdown" *ngIf="dropdownOpen">
-      <div *ngFor="let category of categories" class="multi-select-item" [ngClass]="{'selected': category.selected}">
-        <span>{{ category.name }}</span>
-        <input type="checkbox" [(ngModel)]="category.selected" />
+      <div *ngFor="let option of options" class="multi-select-item" [ngClass]="{'selected': option.isSelected}">
+        <span>{{ option.name }}</span>
+        <input type="checkbox" [(ngModel)]="option.isSelected" />
       </div>
     </div>
   </div>
