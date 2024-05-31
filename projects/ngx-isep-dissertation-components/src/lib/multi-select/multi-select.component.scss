@@ -12,12 +12,13 @@
         font-weight: 700;
     }
 
-    .dropdown-icon {
+    .material-icons-round{
+        transform: rotate(90deg);
         transition: transform 0.3s;
     }
 
-    .dropdown-icon.open {
-        transform: rotate(180deg);
+    .material-icons-round.open{
+        transform: rotate(270deg);
     }
 
     .multi-select-dropdown {
