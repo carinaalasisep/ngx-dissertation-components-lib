@@ -5,7 +5,7 @@
 	background-color: colors("black");
 	color: colors("white");
 	border: 1px solid colors("black");
-
+	font-family: "Open Sans";
 	border-radius: 0;
 	position: relative;
 	display: inline-flex;
@@ -13,26 +13,23 @@
 	align-items: center;
 	justify-content: center;
 	align-content: space-around;
-    width: inherit;
-    height: inherit;
+	width: inherit;
+	height: inherit;
 	overflow: hidden;
 	word-break: keep-all;
 	cursor: pointer;
 
 	&.large {
-    font-family: "Open Sans";
 		padding: 14px 36px 15px 36px;
 		height: 48px;
 	}
 
 	&.medium {
-    font-family: "Open Sans";
 		padding: 12px 32px 13px 32px;
 		height: 42px;
 	}
 
 	&.small {
-    font-family: "Open Sans";
 		padding: 9px 32px 10px 32px;
 		height: 36px;
 	}
@@ -78,15 +75,15 @@
 
 	&.black {
 		color: colors("white");
-    background: colors("black");
+		background: colors("black");
 
 		&:active {
-      background: colors("black");
+			background: colors("black");
 			opacity: 0.75;
 		}
 
 		&.disabled {
-      opacity: 0.5;
+			opacity: 0.5;
 			pointer-events: none;
 		}
 	}

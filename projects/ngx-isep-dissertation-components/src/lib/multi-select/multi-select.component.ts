@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MultiSelectModel } from './multi-select-model';
 
 @Component({
@@ -10,6 +10,8 @@ export class MultiSelectComponent {
   @Input() title: string = "";
   @Input() options: MultiSelectModel[] = [];
 
+  @Output() selectionChange = new EventEmitter<MultiSelectModel[]>();
+
   dropdownOpen = false;
 
   constructor() { }
@@ -20,7 +22,8 @@ export class MultiSelectComponent {
     this.dropdownOpen = !this.dropdownOpen;
   }
 
-  toggleCategorySelection(option: MultiSelectModel): void {
-    option.isSelected = !option.isSelected;
+  onSelected() {
+    const selectedOptions = this.options.filter(option => option.isSelected);
+    this.selectionChange.emit(selectedOptions);
   }
 }
