@@ -7,6 +7,7 @@
     <div class="multi-select-dropdown" *ngIf="dropdownOpen">
       <div *ngFor="let option of options" class="multi-select-item" [ngClass]="{'selected': option.isSelected}">
         <span>{{ option.name }}</span>
-        <input type="checkbox" [(ngModel)]="option.isSelected" (change)="onSelected()"/>
+        <isep-lib-checkbox [label]="option.name" [checked]="option.isSelected" (change)="onSelected(option, $event)"></isep-lib-checkbox>
+        <!-- <input type="checkbox" [(ngModel)]="option.isSelected" (change)="onSelected()"/> -->
     </div>
   </div>
