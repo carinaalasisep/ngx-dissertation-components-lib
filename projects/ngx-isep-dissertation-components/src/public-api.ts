@@ -11,3 +11,4 @@ export * from './lib/select/exports';
 export * from './lib/multi-select/exports';
 export * from './lib/checkbox/exports';
 export * from './lib/icon/exports';
+export * from './lib/tabs/exports';
