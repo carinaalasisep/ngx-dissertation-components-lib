@@ -23,13 +23,10 @@ export class MultiSelectComponent {
   }
 
   onSelected(option: MultiSelectModel, checked: boolean): void {
-    console.log(checked);
     option.isSelected = checked;
     const selectedOptions = this.options.filter(option => option.isSelected);
     this.selectionChange.emit(selectedOptions);
 
-    console.log('is selected multi:', option.isSelected);
     const selectedNames = selectedOptions.map(opt => opt.name);
-    console.log('selectedOptions:', selectedNames);
   }
 }
