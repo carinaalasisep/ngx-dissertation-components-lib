@@ -1,6 +1,6 @@
     <select
         class="custom-select" #items (change)="onSelected(items.value)">
-        <option value="" selected disabled hidden>Select size...</option>
+        <option value="" selected disabled hidden>{{label}}</option>
         <option *ngFor="let option of options" [value]="option.id">{{option.name}}</option>
     </select>
     

@@ -8,6 +8,7 @@ import { SelectModel } from './select-model';
 })
 export class SelectComponent {
   @Input() options: SelectModel[] = [];
+  @Input() label: string = '';
 
   @Output() selectedItem = new EventEmitter<number>();
 

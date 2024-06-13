@@ -1,1 +1,8 @@
-<p>input works!</p>
+<div [ngStyle]="{ width: width + 'px', height: height + 'px', position: 'relative' }">
+    <input #inputElement type="text" [ngStyle]="{ width: width + 'px', height: (height - 2) + 'px' }"
+        (input)="onInput($event)" />
+    <div [ngStyle]="{
+          width: width + 'px',
+          border: border
+        }"></div>
+</div>

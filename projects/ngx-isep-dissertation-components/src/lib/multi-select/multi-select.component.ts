@@ -26,7 +26,5 @@ export class MultiSelectComponent {
     option.isSelected = checked;
     const selectedOptions = this.options.filter(option => option.isSelected);
     this.selectionChange.emit(selectedOptions);
-
-    const selectedNames = selectedOptions.map(opt => opt.name);
   }
 }
