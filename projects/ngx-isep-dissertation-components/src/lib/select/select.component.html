@@ -1,5 +1,5 @@
     <select
-        class="custom-select" #items (change)="onSelected(items.value)">
+        class="custom-select" #items (change)="onSelected(items.value)" [class.error]="errorLabel">
         <option value="" selected disabled hidden>{{label}}</option>
         <option *ngFor="let option of options" [value]="option.id">{{option.name}}</option>
     </select>

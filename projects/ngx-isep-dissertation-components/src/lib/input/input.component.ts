@@ -1,21 +1,49 @@
-import { Component, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'isep-lib-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss']
 })
-export class InputComponent {
+export class InputComponent implements AfterViewInit {
   @Input() width: number = 245;
   @Input() height: number = 32;
-  @Input() border: string = '1px black solid';
+  @Input() placeholder?: string = '';
+  @Input() errorLabel: boolean = false;
 
   @Output() valueChange: EventEmitter<string> = new EventEmitter<string>();
   @ViewChild('inputElement') inputElement!: ElementRef;
 
+  value: string = '';
+  isPlaceholder: boolean = true;
+
+  ngAfterViewInit() {
+    this.setPlaceholder();
+  }
+
   onInput(event: Event) {
     const input = event.target as HTMLInputElement;
-    this.valueChange.emit(input.value);
+    this.value = input.value;
+    this.isPlaceholder = !this.value;
+    this.valueChange.emit(this.value);
+  }
+
+  onFocus() {
+    if (this.isPlaceholder) {
+      this.value = '';
+      this.isPlaceholder = false;
+    }
+  }
+
+  onBlur() {
+    if (!this.value) {
+      this.setPlaceholder();
+    }
+  }
+
+  setPlaceholder() {
+    this.value = this.placeholder || '';
+    this.isPlaceholder = true;
   }
 
   getValue(): string {

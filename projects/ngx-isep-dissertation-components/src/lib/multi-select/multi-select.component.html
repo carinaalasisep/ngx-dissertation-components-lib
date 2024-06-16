@@ -1,4 +1,4 @@
-<div class="multi-select">
+<div class="multi-select" [class.error]="errorLabel">
     <div class="multi-select-header" (click)="toggleDropdown()">
       <span>{{title}}</span>
       <span class="material-icons-round" [class.open]="dropdownOpen">chevron_right</span>

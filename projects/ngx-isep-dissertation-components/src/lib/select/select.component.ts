@@ -9,6 +9,7 @@ import { SelectModel } from './select-model';
 export class SelectComponent {
   @Input() options: SelectModel[] = [];
   @Input() label: string = '';
+  @Input() errorLabel: boolean = false;
 
   @Output() selectedItem = new EventEmitter<number>();
 

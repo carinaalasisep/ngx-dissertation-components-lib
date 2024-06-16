@@ -9,6 +9,7 @@ import { MultiSelectModel } from './multi-select-model';
 export class MultiSelectComponent {
   @Input() title: string = "";
   @Input() options: MultiSelectModel[] = [];
+  @Input() errorLabel: boolean = false;
 
   @Output() selectionChange = new EventEmitter<MultiSelectModel[]>();
 

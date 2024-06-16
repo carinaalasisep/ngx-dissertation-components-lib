@@ -1,8 +1,13 @@
 <div [ngStyle]="{ width: width + 'px', height: height + 'px', position: 'relative' }">
-    <input #inputElement type="text" [ngStyle]="{ width: width + 'px', height: (height - 2) + 'px' }"
-        (input)="onInput($event)" />
-    <div [ngStyle]="{
-          width: width + 'px',
-          border: border
-        }"></div>
-</div>
+    <input
+      #inputElement
+      type="text"
+      [ngStyle]="{ width: width + 'px', height: (height - 2) + 'px' }"
+      (input)="onInput($event)"
+      [value]="value"
+      [class.placeholder]="isPlaceholder"
+      [class.error]="errorLabel"
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+    />
+  </div>
