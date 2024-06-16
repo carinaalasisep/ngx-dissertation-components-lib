@@ -1,37 +1,33 @@
 @import '@fontsource/open-sans';
 
-.tabs {
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .tab-titles {
-    display: flex;
-    cursor: pointer;
-    font-family: Open Sans;
-    font-weight: 600;
-    font-size: 21px;
-  }
-  
-  .tab-titles div {
-    padding: 10px;
-    border-bottom: 2px solid transparent;
-    font-family: Open Sans;
-    font-weight: 600;
-    font-size: 16px;
-    }
-  
-  .tab-titles div.active {
-    border-bottom: 2px solid #000000;
-    font-family: Open Sans;
-    font-weight: 600;
-    font-size: 16px;
-    }
-  
-  .tab-titles div.disabled {
-    border-bottom: 2px solid #ccc;
-    color: #ccc;
-    cursor: not-allowed;
-    font-family: Open Sans;
-    font-weight: 600;
-    font-size: 16px;
-    }
+.tab-titles {
+  display: flex;
+  cursor: pointer;
+  font-family: Open Sans;
+  font-weight: 600;
+  font-size: 21px;
+}
+
+.tab-titles div {
+  padding: 10px;
+  border-bottom: 2px solid transparent;
+  font-family: Open Sans;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.tab-titles div.active {
+  border-bottom: 2px solid #000000;
+  font-family: Open Sans;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.tab-titles div.disabled {
+  border-bottom: 2px solid #ccc;
+  color: #ccc;
+  cursor: not-allowed;
+  font-family: Open Sans;
+  font-weight: 600;
+  font-size: 16px;
+}

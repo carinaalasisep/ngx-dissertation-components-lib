@@ -1,8 +1,8 @@
-<div class="tabs">
+<div>
     <div class="tab-titles">
       <div *ngFor="let tab of tabs" 
            (click)="selectTab(tab)" 
-           [class.active]="tab.active"
+           [class.active]="tab.isActive"
            [class.disabled]="tab.disabled">
         {{ tab.title }}
       </div>

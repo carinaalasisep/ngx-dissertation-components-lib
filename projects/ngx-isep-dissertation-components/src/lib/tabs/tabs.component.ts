@@ -10,7 +10,7 @@ export class TabsComponent implements AfterContentInit {
   @ContentChildren(TabComponent) tabs!: QueryList<TabComponent>;
 
   ngAfterContentInit() {
-    const activeTabs = this.tabs.filter(tab => tab.active);
+    const activeTabs = this.tabs.filter(tab => tab.isActive);
 
     if (activeTabs.length === 0) {
       this.selectTab(this.tabs.first);
@@ -21,7 +21,15 @@ export class TabsComponent implements AfterContentInit {
     if (tab.disabled) {
       return;
     }
-    this.tabs.toArray().forEach(t => t.active = false);
-    tab.active = true;
+    this.tabs.toArray().forEach(t => t.isActive = false);
+    tab.isActive = true;
+  }
+
+  selectTabByIndex(index: number) {
+    const tabsArray = this.tabs.toArray();
+    if (tabsArray[index]) {
+      tabsArray.forEach(tab => tab.isActive = false); // Deselect all tabs
+      tabsArray[index].isActive = true; // Select the desired tab
+    }
   }
 }
