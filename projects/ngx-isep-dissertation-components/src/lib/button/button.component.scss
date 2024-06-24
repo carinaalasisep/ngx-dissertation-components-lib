@@ -82,14 +82,17 @@
 			opacity: 0.75;
 		}
 
+		span:after {
+			border-bottom: 1px solid colors("white");
+		}
+
 		&.disabled {
 			opacity: 0.5;
-			pointer-events: none;
 		}
 	}
 
 	&.white {
-		color: colors("white");
+		color: colors("black");
 		background: colors("white");
 
 		&:active {
@@ -97,7 +100,7 @@
 		}
 
 		span:after {
-			border-bottom: 1px solid colors("white");
+			border-bottom: 1px solid colors("black");
 		}
 
 		&.disabled {

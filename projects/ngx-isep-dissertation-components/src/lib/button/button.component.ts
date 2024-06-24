@@ -12,6 +12,10 @@ export class ButtonComponent implements OnChanges{
   @Input()
   public color: ButtonColor = ButtonColor.BLACK;
 
+  public black: ButtonColor = ButtonColor.BLACK;
+  public white: ButtonColor = ButtonColor.WHITE;
+  public coral: ButtonColor = ButtonColor.CORAL;
+
   @Input()
   public size: ButtonSize = ButtonSize.MEDIUM;
 
