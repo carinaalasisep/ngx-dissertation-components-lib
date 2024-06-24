@@ -1,38 +1,51 @@
-import { Component, EventEmitter, HostBinding, Input, OnChanges, Output } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { ButtonColor } from './button-color.enum';
 import { ButtonSize } from './button-size.enum';
 import { ButtonIcon } from './button-icon.enum';
+import { ICONS } from '../constants/icons';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
-  selector: 'isep-lib-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss']
+	selector: 'isep-lib-button',
+	templateUrl: './button.component.html',
+	styleUrls: ['./button.component.scss']
 })
-export class ButtonComponent implements OnChanges{
-  @Input()
-  public color: ButtonColor = ButtonColor.BLACK;
+export class ButtonComponent implements OnChanges, OnInit {
 
-  public black: ButtonColor = ButtonColor.BLACK;
-  public white: ButtonColor = ButtonColor.WHITE;
-  public coral: ButtonColor = ButtonColor.CORAL;
+	@Input()
+	public color: ButtonColor = ButtonColor.BLACK;
 
-  @Input()
-  public size: ButtonSize = ButtonSize.MEDIUM;
+	black: ButtonColor = ButtonColor.BLACK;
+	white: ButtonColor = ButtonColor.WHITE;
+	coral: ButtonColor = ButtonColor.CORAL;
+	heart = ButtonIcon.HEART;
+	iconHtml: SafeHtml = '';
 
-  @Input()
-  public icon: ButtonIcon | undefined;
+	@Input()
+	public size: ButtonSize = ButtonSize.MEDIUM;
 
-  @Input() label?: string;
+	@Input()
+	public icon?: ButtonIcon;
 
-  @Input() disabled: boolean = false;
+	@Input() label?: string;
 
-  @Input() isSelected: boolean = false;
+	@Input() disabled: boolean = false;
 
-  @Output() buttonClick = new EventEmitter<void>();
+	@Input() isSelected: boolean = false;
 
-  @HostBinding('class') hostClass = 'button-container';
+	@Output() buttonClick = new EventEmitter<void>();
 
-  ngOnChanges() {
+	@HostBinding('class') hostClass = 'button-container'
+	
+	constructor(private sanitizer: DomSanitizer) {}
+
+	ngOnInit(): void {
+		if(this.icon){
+			this.getIconHTML(this.icon!);
+		}
+	}
+
+	ngOnChanges() {
 		this.updateHostClass(
 			this.size,
 			this.color,
@@ -59,4 +72,12 @@ export class ButtonComponent implements OnChanges{
 
 		this.hostClass = classes.join(' ');
 	}
+
+	getIconHTML(icon: string) {
+		this.iconHtml = this.sanitizeHtml(ICONS[icon]) || '';
+	}
+
+	sanitizeHtml(html: string): SafeHtml {
+		return this.sanitizer.bypassSecurityTrustHtml(html);
+	  }
 }

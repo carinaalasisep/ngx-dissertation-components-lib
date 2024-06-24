@@ -1,6 +1,7 @@
 <!-- HTML !-->
 <div [ngClass]="{'button-container': true, 'white': color === white, 'black': color === black}">
     <div *ngIf="icon">
-        <span class="material-icons-round">{{icon}}</span></div>
+        <div style="margin-top: 5px;" [innerHTML]="iconHtml"></div>
+    </div>
     <div class="button-container-span"><span>{{label}}</span></div>
 </div>
