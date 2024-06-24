@@ -1,4 +1,5 @@
 @import '@fontsource/open-sans'; // Defaults to weight 400
+@import 'material-icons/iconfont/material-icons.css';
 
 /* The container must be positioned relative: */
 .custom-select {
@@ -11,22 +12,25 @@
     height: inherit;
     background: white;
     border-radius: 10px;
-    border: 1px black solid
+    border: 1px black solid;
+    padding: 10px;
+    -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.custom-select::-ms-expand {
+  display: none; /* For Internet Explorer */
+}
+.material-icons-round{
+  transform: rotate(90deg);
+  transition: transform 0.3s;
 }
 
+.material-icons-round.open{
+  transform: rotate(270deg);
+}
 .custom-select.error{
   border: 1px solid red;
-}
-
-
-/* Style items (options): */
-.select-items {
-    position: absolute;
-    background-color: DodgerBlue;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 99;
 }
 
 .select-selected:after {
@@ -38,14 +42,15 @@
     height: 0;
     border: 6px solid transparent;
     border-color: #000 transparent transparent transparent;
+    color: black;
   }
-
-  
 
 /* Point the arrow upwards when the select box is open (active): */
 .select-selected.select-arrow-active:after {
     border-color: transparent transparent #000 transparent;
     top: 7px;
+    color: black;
+
   }
   
   /* style the items (options), including the selected item: */
@@ -55,5 +60,26 @@
     border: 1px solid transparent;
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
     cursor: pointer;
+    color: black;
   }
   
+  .custom-select-container {
+    position: relative;
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+  }
+  
+  .custom-arrow {
+    position: absolute;
+    right: 10px;
+    top: 35%;
+
+    transform: rotate(90deg);
+    transition: transform 0.3s; 
+    pointer-events: none;
+  }
+  
+  .custom-arrow.open {
+    transform: rotate(270deg);
+  }

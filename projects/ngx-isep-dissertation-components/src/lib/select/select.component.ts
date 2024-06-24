@@ -12,6 +12,7 @@ export class SelectComponent {
   @Input() errorLabel: boolean = false;
 
   @Output() selectedItem = new EventEmitter<number>();
+  dropdownOpen = false;
 
   onSelected(value: string) {
     const selectedId = +value;

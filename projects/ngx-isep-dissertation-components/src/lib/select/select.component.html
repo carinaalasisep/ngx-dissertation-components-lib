@@ -1,6 +1,13 @@
+<div class="custom-select-container">
     <select
-        class="custom-select" #items (change)="onSelected(items.value)" [class.error]="errorLabel">
-        <option value="" selected disabled hidden>{{label}}</option>
-        <option *ngFor="let option of options" [value]="option.id">{{option.name}}</option>
+      class="custom-select" 
+      #items 
+      (change)="onSelected(items.value)" 
+      (focus)="dropdownOpen = true" 
+      (blur)="dropdownOpen = false" 
+      [class.error]="errorLabel">
+      <option value="" style="color:grey" selected disabled hidden>{{label}}</option>
+      <option style="color:black" *ngFor="let option of options" [value]="option.id">{{option.name}}</option>
     </select>
-    
+    <span class="material-icons-round custom-arrow" [class.open]="dropdownOpen">chevron_right</span>
+  </div>
