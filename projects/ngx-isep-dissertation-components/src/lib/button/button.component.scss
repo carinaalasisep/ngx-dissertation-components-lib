@@ -45,7 +45,7 @@
 			padding-bottom: 0;
 			display: block;
 			pointer-events: none;
-			border-color: colors("black");
+			border-color: transparent;
 
 			&::after {
 				position: absolute;
@@ -56,13 +56,13 @@
 				bottom: 0;
 				opacity: 0;
 				transition: all 0.25s ease-in-out;
-				border-bottom: 1px solid colors("black");
+				border-bottom: transparent;
 			}
 		}
 
 		&:hover span,
 		&:focus span {
-			padding-bottom: 2px;
+			// padding-bottom: 2px;
 			margin-top: -2px;
 
 			&::after,
@@ -93,10 +93,12 @@
 
 	&.white {
 		color: colors("black");
-		background: colors("white");
+		background: colors("off-white");
+		border: none;
+		font-weight: 700;
 
 		&:active {
-			background: colors("white");
+			background: colors("off-white");
 		}
 
 		span:after {
