@@ -52,6 +52,10 @@ export class ButtonComponent implements OnChanges, OnInit {
 			this.disabled,
 			this.isSelected,
 		);
+
+		if(this.icon){
+			this.getIconHTML(this.icon!);
+		}
 	}
 
 	updateHostClass(

@@ -3,4 +3,5 @@ export enum ButtonIcon {
     FILTER = 'filter',
     HEART = 'heart',
     SHOPPING_BAG = 'shoppingbag',
+    ARROW_RIGHT = 'arrowRight',
   }
