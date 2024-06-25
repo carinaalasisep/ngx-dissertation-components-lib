@@ -1,5 +1,5 @@
 <!-- HTML !-->
-<div [ngClass]="{'button-container': true, 'white': color === white, 'black': color === black}">
+<div [ngClass]="{'button-container': true, 'white': color === white, 'black': color === black, 'disabled': disabled === true}">
     <div *ngIf="icon">
         <div style="margin-top: 5px;" [innerHTML]="iconHtml"></div>
     </div>
