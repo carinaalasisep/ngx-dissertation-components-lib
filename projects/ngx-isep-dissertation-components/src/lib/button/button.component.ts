@@ -31,8 +31,6 @@ export class ButtonComponent implements OnChanges, OnInit {
 
 	@Input() disabled: boolean = false;
 
-	@Input() isSelected: boolean = false;
-
 	@Output() buttonClick = new EventEmitter<void>();
 
 	@HostBinding('class') hostClass = 'button-container'
@@ -50,7 +48,6 @@ export class ButtonComponent implements OnChanges, OnInit {
 			this.size,
 			this.color,
 			this.disabled,
-			this.isSelected,
 		);
 
 		if(this.icon){
@@ -62,16 +59,11 @@ export class ButtonComponent implements OnChanges, OnInit {
 		size: ButtonSize,
 		color: ButtonColor,
 		isDisabled: boolean,
-		isSelected: boolean,
 	) {
 		const classes = ['button-container', `${size}`, `${color}`];
 
 		if (isDisabled) {
 			classes.push('disabled');
-		}
-
-		if (isSelected) {
-			classes.push('selected');
 		}
 
 		this.hostClass = classes.join(' ');
