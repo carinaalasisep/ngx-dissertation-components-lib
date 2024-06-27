@@ -33,6 +33,36 @@
               "zone.js/testing"
             ]
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/ngx-isep-dissertation-components/.storybook",
+            "browserTarget": "ngx-isep-dissertation-components:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/ngx-isep-dissertation-components"
+            ],
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/ngx-isep-dissertation-components/.storybook",
+            "browserTarget": "ngx-isep-dissertation-components:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/ngx-isep-dissertation-components"
+            ],
+            "outputDir": "storybook-static"
+          }
         }
       }
     }

@@ -42,3 +42,5 @@ testem.log
 Thumbs.db
 .nx/cache/18.3.4-nx.win32-x64-msvc.node
 .nx/cache/nx_files.nxt
+
+*storybook.log
