@@ -11,6 +11,16 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "ArrowRightIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    icon: Icon.ARROW_RIGHT,\r\n  },\r\n}"
+            },
+            {
                 "name": "Checked",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -19,6 +29,36 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n    args: {\r\n        checked: true,\r\n        label: 'Checkbox Label',\r\n    }\r\n}"
+            },
+            {
+                "name": "ChevronLeftIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    icon: Icon.CHEVRON_LEFT,\r\n  },\r\n}"
+            },
+            {
+                "name": "ChevronRightIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    icon: Icon.CHEVRON_RIGHT,\r\n  },\r\n}"
+            },
+            {
+                "name": "CloseIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    icon: Icon.CLOSE,\r\n  },\r\n}"
             },
             {
                 "name": "CustomSize",
@@ -38,7 +78,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args: {\r\n        color: ButtonColor.BLACK,\r\n        size: ButtonSize.MEDIUM,\r\n        label: 'Button',\r\n        disabled: false,\r\n    }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.BLACK,\r\n    size: ButtonSize.MEDIUM,\r\n    label: 'Button',\r\n    disabled: false,\r\n  },\r\n}"
             },
             {
                 "name": "Default",
@@ -108,7 +148,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args: {\r\n    color: ButtonColor.WHITE,\r\n    size: ButtonSize.SMALL,\r\n    label: 'Button',\r\n    disabled: true,\r\n}}"
+                "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.WHITE,\r\n    size: ButtonSize.SMALL,\r\n    label: 'Button',\r\n    disabled: true,\r\n  },\r\n}"
             },
             {
                 "name": "exampleOptions",
@@ -129,6 +169,26 @@
                 "deprecationMessage": "",
                 "type": "SelectModel[]",
                 "defaultValue": "[\r\n    { id: 1, name: 'Option 1' },\r\n    { id: 2, name: 'Option 2' },\r\n    { id: 3, name: 'Option 3' },\r\n]"
+            },
+            {
+                "name": "FilterIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    icon: Icon.FILTER,\r\n  },\r\n}"
+            },
+            {
+                "name": "HeartIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    icon: Icon.HEART,\r\n  },\r\n}"
             },
             {
                 "name": "PreSelectedOption",
@@ -169,6 +229,16 @@
                 "deprecationMessage": "",
                 "type": "Preview",
                 "defaultValue": "{\r\n  parameters: {\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
+            },
+            {
+                "name": "ShoppingBagIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    icon: Icon.SHOPPING_BAG,\r\n  },\r\n}"
             },
             {
                 "name": "WithCustomLabel",
@@ -228,7 +298,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args: {\r\n        color: ButtonColor.CORAL,\r\n        size: ButtonSize.LARGE,\r\n        label: 'Button',\r\n        icon: ButtonIcon.HEART,\r\n        disabled: false,\r\n    }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.CORAL,\r\n    size: ButtonSize.LARGE,\r\n    label: 'Button',\r\n    icon: ButtonIcon.HEART,\r\n    disabled: false,\r\n  },\r\n}"
             },
             {
                 "name": "WithPromoPrice",
@@ -270,6 +340,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<CheckboxComponent>",
                 "file": "projects/ngx-isep-dissertation-components/src/stories/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<IconComponent>",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -333,6 +414,78 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts": [
+                {
+                    "name": "ArrowRightIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    icon: Icon.ARROW_RIGHT,\r\n  },\r\n}"
+                },
+                {
+                    "name": "ChevronLeftIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    icon: Icon.CHEVRON_LEFT,\r\n  },\r\n}"
+                },
+                {
+                    "name": "ChevronRightIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    icon: Icon.CHEVRON_RIGHT,\r\n  },\r\n}"
+                },
+                {
+                    "name": "CloseIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    icon: Icon.CLOSE,\r\n  },\r\n}"
+                },
+                {
+                    "name": "FilterIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    icon: Icon.FILTER,\r\n  },\r\n}"
+                },
+                {
+                    "name": "HeartIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    icon: Icon.HEART,\r\n  },\r\n}"
+                },
+                {
+                    "name": "ShoppingBagIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    icon: Icon.SHOPPING_BAG,\r\n  },\r\n}"
+                }
+            ],
             "projects/ngx-isep-dissertation-components/src/stories/checkbox.stories.ts": [
                 {
                     "name": "Checked",
@@ -406,7 +559,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    args: {\r\n        color: ButtonColor.BLACK,\r\n        size: ButtonSize.MEDIUM,\r\n        label: 'Button',\r\n        disabled: false,\r\n    }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.BLACK,\r\n    size: ButtonSize.MEDIUM,\r\n    label: 'Button',\r\n    disabled: false,\r\n  },\r\n}"
                 },
                 {
                     "name": "Disabled",
@@ -416,7 +569,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    args: {\r\n    color: ButtonColor.WHITE,\r\n    size: ButtonSize.SMALL,\r\n    label: 'Button',\r\n    disabled: true,\r\n}}"
+                    "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.WHITE,\r\n    size: ButtonSize.SMALL,\r\n    label: 'Button',\r\n    disabled: true,\r\n  },\r\n}"
                 },
                 {
                     "name": "WithIcon",
@@ -426,7 +579,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    args: {\r\n        color: ButtonColor.CORAL,\r\n        size: ButtonSize.LARGE,\r\n        label: 'Button',\r\n        icon: ButtonIcon.HEART,\r\n        disabled: false,\r\n    }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.CORAL,\r\n    size: ButtonSize.LARGE,\r\n    label: 'Button',\r\n    icon: ButtonIcon.HEART,\r\n    disabled: false,\r\n  },\r\n}"
                 }
             ],
             "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts": [
@@ -619,6 +772,19 @@
                     "kind": 183
                 }
             ],
+            "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<IconComponent>",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts": [
                 {
                     "name": "Story",
@@ -757,6 +923,76 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "WithCustomLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ArrowRightIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ChevronLeftIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ChevronRightIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CloseIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FilterIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "HeartIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ShoppingBagIcon",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

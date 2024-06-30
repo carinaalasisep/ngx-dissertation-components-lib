@@ -5,6 +5,11 @@ setCompodocJson(docJson);
 
 const preview: Preview = {
   parameters: {
+    previewTabs: {
+      'storybook/docs/panel': {
+        hidden: false
+      }
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

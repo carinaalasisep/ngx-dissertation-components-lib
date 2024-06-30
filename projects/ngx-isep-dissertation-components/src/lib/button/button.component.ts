@@ -4,7 +4,6 @@ import { ButtonSize } from './button-size.enum';
 import { ButtonIcon } from './button-icon.enum';
 import { ICONS } from '../icon/constants/icons';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { Icon } from '../icon/icon.enum';
 
 @Component({
 	selector: 'isep-lib-button',

@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { MultiSelectComponent } from '../lib/multi-select/multi-select.component';
 import { MultiSelectModel } from '../lib/multi-select/multi-select-model';
+import { CheckboxModule } from '../public-api';
 
 export default {
     title: 'Components/MultiSelect',
@@ -12,7 +13,7 @@ export default {
     decorators: [
         moduleMetadata({
             declarations: [MultiSelectComponent],
-            imports: [BrowserModule, FormsModule],
+            imports: [BrowserModule, FormsModule, CheckboxModule],
         }),
     ],
     argTypes: {

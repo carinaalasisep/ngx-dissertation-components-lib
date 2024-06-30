@@ -1,13 +1,11 @@
 <div class="multi-select" [class.error]="errorLabel">
     <div class="multi-select-header" (click)="toggleDropdown()">
       <span>{{title}}</span>
-      <span class="material-icons-round" [class.open]="dropdownOpen">chevron_right</span>
-      <!-- <span class="dropdown-icon" [class.open]="dropdownOpen"></span> -->
+      <span class="material-icons-round" [class.open]="dropdownOpen"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 6l6 6l-6 6"/></svg></span>
     </div>
     <div class="multi-select-dropdown" *ngIf="dropdownOpen">
       <div *ngFor="let option of options" class="multi-select-item" [ngClass]="{'selected': option.isSelected}">
         <span>{{ option.name }}</span>
-        <isep-lib-checkbox [label]="option.name" [checked]="option.isSelected" (change)="onSelected(option, $event)"></isep-lib-checkbox>
-        <!-- <input type="checkbox" [(ngModel)]="option.isSelected" (change)="onSelected()"/> -->
+        <isep-lib-checkbox [checked]="option.isSelected" (change)="onSelected(option, $event)"></isep-lib-checkbox>
     </div>
   </div>
