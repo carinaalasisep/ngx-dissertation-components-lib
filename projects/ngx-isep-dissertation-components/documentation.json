@@ -21,6 +21,16 @@
                 "defaultValue": "{\r\n    args: {\r\n        checked: true,\r\n        label: 'Checkbox Label',\r\n    }\r\n}"
             },
             {
+                "name": "CustomSize",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    args: {\r\n        width: 300,\r\n        height: 40,\r\n        placeholder: 'Custom size input',\r\n        errorLabel: false,\r\n    }\r\n}"
+            },
+            {
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -41,6 +51,56 @@
                 "defaultValue": "{\r\n    args: {\r\n        checked: false,\r\n        label: 'Checkbox Label',\r\n    }\r\n}"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    args: {\r\n        width: 245,\r\n        height: 32,\r\n        placeholder: 'Enter text',\r\n        errorLabel: false,\r\n    }\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    args: {\r\n        title: 'Select Options',\r\n        options: exampleOptions,\r\n        errorLabel: false,\r\n    }\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/product-tile.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: false,\r\n        tagColor: \"#1E2832\",\r\n        tagText: \"SALE\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 100.00,\r\n        priceWithoutPromo: undefined,\r\n    }\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    args: {\r\n        options: exampleOptions,\r\n        label: 'Select an Option',\r\n        errorLabel: false,\r\n    }\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/tabs.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <isep-lib-tabs>\r\n        <isep-lib-tab title=\"Tab 1\" [isActive]=\"true\">Content for Tab 1</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 2\">Content for Tab 2</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 3\" [disabled]=\"true\">Content for Tab 3</isep-lib-tab>\r\n      </isep-lib-tabs>\r\n    `,\r\n  }),\r\n  args: {},\r\n}"
+            },
+            {
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -49,6 +109,56 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n    args: {\r\n    color: ButtonColor.WHITE,\r\n    size: ButtonSize.SMALL,\r\n    label: 'Button',\r\n    disabled: true,\r\n}}"
+            },
+            {
+                "name": "exampleOptions",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "MultiSelectModel[]",
+                "defaultValue": "[\r\n    { id: 1, name: 'Option 1', isSelected: false },\r\n    { id: 2, name: 'Option 2', isSelected: false },\r\n    { id: 3, name: 'Option 3', isSelected: false },\r\n]"
+            },
+            {
+                "name": "exampleOptions",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "SelectModel[]",
+                "defaultValue": "[\r\n    { id: 1, name: 'Option 1' },\r\n    { id: 2, name: 'Option 2' },\r\n    { id: 3, name: 'Option 3' },\r\n]"
+            },
+            {
+                "name": "PreSelectedOption",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    args: {\r\n        options: exampleOptions,\r\n        label: 'Select an Option',\r\n        errorLabel: false,\r\n    }\r\n}"
+            },
+            {
+                "name": "PreSelectedOptions",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    args: {\r\n        title: 'Select Options',\r\n        options: [\r\n            { id: 1, name: 'Option 1', isSelected: true },\r\n            { id: 2, name: 'Option 2', isSelected: false },\r\n            { id: 3, name: 'Option 3', isSelected: true },\r\n        ],\r\n        errorLabel: false,\r\n    }\r\n}"
+            },
+            {
+                "name": "PreSelectedTab",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/tabs.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <isep-lib-tabs>\r\n        <isep-lib-tab title=\"Tab 1\">Content for Tab 1</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 2\" [isActive]=\"true\">Content for Tab 2</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 3\">Content for Tab 3</isep-lib-tab>\r\n      </isep-lib-tabs>\r\n    `,\r\n  }),\r\n  args: {},\r\n}"
             },
             {
                 "name": "preview",
@@ -71,6 +181,46 @@
                 "defaultValue": "{\r\n    args: {\r\n        checked: false,\r\n        label: 'Custom Label',\r\n    }\r\n}"
             },
             {
+                "name": "WithDisabledTab",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/tabs.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <isep-lib-tabs>\r\n        <isep-lib-tab title=\"Tab 1\">Content for Tab 1</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 2\">Content for Tab 2</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 3\" [disabled]=\"true\" [isActive]=\"true\">Content for Tab 3</isep-lib-tab>\r\n      </isep-lib-tabs>\r\n    `,\r\n  }),\r\n  args: {},\r\n}"
+            },
+            {
+                "name": "WithErrorLabel",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    args: {\r\n        width: 245,\r\n        height: 32,\r\n        placeholder: 'Enter text',\r\n        errorLabel: true,\r\n    }\r\n}"
+            },
+            {
+                "name": "WithErrorLabel",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    args: {\r\n        title: 'Select Options',\r\n        options: exampleOptions,\r\n        errorLabel: true,\r\n    }\r\n}"
+            },
+            {
+                "name": "WithErrorLabel",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    args: {\r\n        options: exampleOptions,\r\n        label: 'Select an Option',\r\n        errorLabel: true,\r\n    }\r\n}"
+            },
+            {
                 "name": "WithIcon",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -79,6 +229,26 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n    args: {\r\n        color: ButtonColor.CORAL,\r\n        size: ButtonSize.LARGE,\r\n        label: 'Button',\r\n        icon: ButtonIcon.HEART,\r\n        disabled: false,\r\n    }\r\n}"
+            },
+            {
+                "name": "WithPromoPrice",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/product-tile.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: true,\r\n        tagColor: \"#1E2832\",\r\n        tagText: \"SALE\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 80.00,\r\n        priceWithoutPromo: 100.00,\r\n    }\r\n}"
+            },
+            {
+                "name": "WithTag",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/product-tile.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: true,\r\n        tagColor: \"#FF0000\",\r\n        tagText: \"NEW\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 100.00,\r\n        priceWithoutPromo: undefined,\r\n    }\r\n}"
             }
         ],
         "functions": [],
@@ -100,6 +270,61 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<CheckboxComponent>",
                 "file": "projects/ngx-isep-dissertation-components/src/stories/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<InputComponent>",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<MultiSelectComponent>",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ProductTileComponent>",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/product-tile.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SelectComponent>",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<TabsComponent>",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/tabs.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -140,6 +365,38 @@
                     "defaultValue": "{\r\n    args: {\r\n        checked: false,\r\n        label: 'Custom Label',\r\n    }\r\n}"
                 }
             ],
+            "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts": [
+                {
+                    "name": "CustomSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args: {\r\n        width: 300,\r\n        height: 40,\r\n        placeholder: 'Custom size input',\r\n        errorLabel: false,\r\n    }\r\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args: {\r\n        width: 245,\r\n        height: 32,\r\n        placeholder: 'Enter text',\r\n        errorLabel: false,\r\n    }\r\n}"
+                },
+                {
+                    "name": "WithErrorLabel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args: {\r\n        width: 245,\r\n        height: 32,\r\n        placeholder: 'Enter text',\r\n        errorLabel: true,\r\n    }\r\n}"
+                }
+            ],
             "projects/ngx-isep-dissertation-components/src/stories/button.stories.ts": [
                 {
                     "name": "Default",
@@ -170,6 +427,154 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\r\n    args: {\r\n        color: ButtonColor.CORAL,\r\n        size: ButtonSize.LARGE,\r\n        label: 'Button',\r\n        icon: ButtonIcon.HEART,\r\n        disabled: false,\r\n    }\r\n}"
+                }
+            ],
+            "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args: {\r\n        title: 'Select Options',\r\n        options: exampleOptions,\r\n        errorLabel: false,\r\n    }\r\n}"
+                },
+                {
+                    "name": "exampleOptions",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MultiSelectModel[]",
+                    "defaultValue": "[\r\n    { id: 1, name: 'Option 1', isSelected: false },\r\n    { id: 2, name: 'Option 2', isSelected: false },\r\n    { id: 3, name: 'Option 3', isSelected: false },\r\n]"
+                },
+                {
+                    "name": "PreSelectedOptions",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args: {\r\n        title: 'Select Options',\r\n        options: [\r\n            { id: 1, name: 'Option 1', isSelected: true },\r\n            { id: 2, name: 'Option 2', isSelected: false },\r\n            { id: 3, name: 'Option 3', isSelected: true },\r\n        ],\r\n        errorLabel: false,\r\n    }\r\n}"
+                },
+                {
+                    "name": "WithErrorLabel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args: {\r\n        title: 'Select Options',\r\n        options: exampleOptions,\r\n        errorLabel: true,\r\n    }\r\n}"
+                }
+            ],
+            "projects/ngx-isep-dissertation-components/src/stories/product-tile.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/product-tile.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: false,\r\n        tagColor: \"#1E2832\",\r\n        tagText: \"SALE\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 100.00,\r\n        priceWithoutPromo: undefined,\r\n    }\r\n}"
+                },
+                {
+                    "name": "WithPromoPrice",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/product-tile.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: true,\r\n        tagColor: \"#1E2832\",\r\n        tagText: \"SALE\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 80.00,\r\n        priceWithoutPromo: 100.00,\r\n    }\r\n}"
+                },
+                {
+                    "name": "WithTag",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/product-tile.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: true,\r\n        tagColor: \"#FF0000\",\r\n        tagText: \"NEW\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 100.00,\r\n        priceWithoutPromo: undefined,\r\n    }\r\n}"
+                }
+            ],
+            "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args: {\r\n        options: exampleOptions,\r\n        label: 'Select an Option',\r\n        errorLabel: false,\r\n    }\r\n}"
+                },
+                {
+                    "name": "exampleOptions",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "SelectModel[]",
+                    "defaultValue": "[\r\n    { id: 1, name: 'Option 1' },\r\n    { id: 2, name: 'Option 2' },\r\n    { id: 3, name: 'Option 3' },\r\n]"
+                },
+                {
+                    "name": "PreSelectedOption",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args: {\r\n        options: exampleOptions,\r\n        label: 'Select an Option',\r\n        errorLabel: false,\r\n    }\r\n}"
+                },
+                {
+                    "name": "WithErrorLabel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args: {\r\n        options: exampleOptions,\r\n        label: 'Select an Option',\r\n        errorLabel: true,\r\n    }\r\n}"
+                }
+            ],
+            "projects/ngx-isep-dissertation-components/src/stories/tabs.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/tabs.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <isep-lib-tabs>\r\n        <isep-lib-tab title=\"Tab 1\" [isActive]=\"true\">Content for Tab 1</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 2\">Content for Tab 2</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 3\" [disabled]=\"true\">Content for Tab 3</isep-lib-tab>\r\n      </isep-lib-tabs>\r\n    `,\r\n  }),\r\n  args: {},\r\n}"
+                },
+                {
+                    "name": "PreSelectedTab",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/tabs.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <isep-lib-tabs>\r\n        <isep-lib-tab title=\"Tab 1\">Content for Tab 1</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 2\" [isActive]=\"true\">Content for Tab 2</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 3\">Content for Tab 3</isep-lib-tab>\r\n      </isep-lib-tabs>\r\n    `,\r\n  }),\r\n  args: {},\r\n}"
+                },
+                {
+                    "name": "WithDisabledTab",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/tabs.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <isep-lib-tabs>\r\n        <isep-lib-tab title=\"Tab 1\">Content for Tab 1</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 2\">Content for Tab 2</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 3\" [disabled]=\"true\" [isActive]=\"true\">Content for Tab 3</isep-lib-tab>\r\n      </isep-lib-tabs>\r\n    `,\r\n  }),\r\n  args: {},\r\n}"
                 }
             ],
             "projects/ngx-isep-dissertation-components/.storybook/preview.ts": [
@@ -208,6 +613,71 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<CheckboxComponent>",
                     "file": "projects/ngx-isep-dissertation-components/src/stories/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<InputComponent>",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<MultiSelectComponent>",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/ngx-isep-dissertation-components/src/stories/product-tile.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ProductTileComponent>",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/product-tile.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SelectComponent>",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/ngx-isep-dissertation-components/src/stories/tabs.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TabsComponent>",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/tabs.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -287,6 +757,176 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "WithCustomLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CustomSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithErrorLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "exampleOptions",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PreSelectedOptions",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithErrorLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/product-tile.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/product-tile.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithPromoPrice",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/product-tile.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithTag",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "exampleOptions",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PreSelectedOption",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithErrorLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/tabs.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/tabs.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PreSelectedTab",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/tabs.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithDisabledTab",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

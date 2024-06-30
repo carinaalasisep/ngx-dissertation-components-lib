@@ -2,8 +2,9 @@ import { Component, EventEmitter, HostBinding, Input, OnChanges, OnInit, Output 
 import { ButtonColor } from './button-color.enum';
 import { ButtonSize } from './button-size.enum';
 import { ButtonIcon } from './button-icon.enum';
-import { ICONS } from '../constants/icons';
+import { ICONS } from '../icon/constants/icons';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { Icon } from '../icon/icon.enum';
 
 @Component({
 	selector: 'isep-lib-button',
@@ -33,12 +34,17 @@ export class ButtonComponent implements OnChanges, OnInit {
 
 	@Output() buttonClick = new EventEmitter<void>();
 
-	@HostBinding('class') hostClass = 'button-container'
+	@HostBinding('class') hostClass = 'button-container';
+	// iconToDisplay?: Icon;
+	medium: ButtonSize = ButtonSize.MEDIUM;
+	large: ButtonSize = ButtonSize.LARGE;
+	small: ButtonSize = ButtonSize.SMALL;
 	
 	constructor(private sanitizer: DomSanitizer) {}
 
 	ngOnInit(): void {
 		if(this.icon){
+			// this.iconToDisplay = this.castIconToButtonIcon(this.icon);
 			this.getIconHTML(this.icon!);
 		}
 	}
@@ -51,9 +57,14 @@ export class ButtonComponent implements OnChanges, OnInit {
 		);
 
 		if(this.icon){
+			// this.iconToDisplay = this.castIconToButtonIcon(this.icon);
 			this.getIconHTML(this.icon!);
 		}
 	}
+
+	// castIconToButtonIcon(icon: ButtonIcon): Icon {
+	// 	return icon as unknown as Icon;
+	//   }
 
 	updateHostClass(
 		size: ButtonSize,
