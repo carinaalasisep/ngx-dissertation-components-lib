@@ -46,11 +46,3 @@ export const WithErrorLabel: Story = {
         errorLabel: true,
     }
 };
-
-export const PreSelectedOption: Story = {
-    args: {
-        options: exampleOptions,
-        label: 'Select an Option',
-        errorLabel: false,
-    }
-};
