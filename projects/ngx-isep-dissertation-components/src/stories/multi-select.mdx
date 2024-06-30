@@ -1,0 +1,45 @@
+import { Canvas, Meta } from '@storybook/blocks';
+ 
+import * as MultiSelectStories from './multi-select.stories';
+ 
+<Meta of={MultiSelectStories} />
+ 
+# MultiSelect
+
+The `MultiSelectComponent` is a custom element that allows the selection of a list of items using the checkbox component. It also possesses an error state.
+
+<Canvas of={MultiSelectStories.Default} />
+
+## Props
+
+- `title`: The title of the multi select element.
+- `options`: The options to list in the multi select element. This is of type MultiSelectModel, with the properties id, name and isSelected to control the selection of each option
+- `errorLabel`: Boolean that enables the error mode.
+
+## Usage
+
+```html
+<isep-lib-multi-select
+  [title]="'Select Options'"
+  [options]="[{id: 1, name: 'Option 1', isSelected: false}, {id: 2, name: 'Option 2', isSelected: false}, {id: 3, name: 'Option 3', isSelected: false}]"
+  [errorLabel]="false"
+  (selectionChange)="selectionChange($event)"
+></isep-lib-multi-select>
+```
+To use `<isep-lib-multi-select>` add the respective module to project module imports:
+
+```typescript
+// app.module.ts
+import { MultiSelectModule } from 'ngx-dissertation-components-lib';
+
+@NgModule({ 
+	imports: [MultiSelectModule]
+})
+export class AppModule {}
+```
+
+### Examples
+- [Library Code GIT](https://github.com/carinaalasisep/ngx-dissertation-components-lib/tree/main/projects/ngx-isep-dissertation-components/src/lib/multi-select)
+- [MFE example Code GIT](https://github.com/carinaalasisep/dissertation-productcat-mfe/blob/main/src/app/features/product-listing/product-listing.component.html)
+
+ 

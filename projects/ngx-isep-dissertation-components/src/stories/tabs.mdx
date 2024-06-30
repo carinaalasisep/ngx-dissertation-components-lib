@@ -1,0 +1,52 @@
+import { Canvas, Meta } from '@storybook/blocks';
+ 
+import * as TabsStories from './tabs.stories';
+ 
+<Meta of={TabsStories} />
+ 
+# Tabs
+
+The `TabsComponent` is a container for tabbed content, allowing users to switch between different views or sections. The `TabComponent` represents individual tabs within the `TabsComponent`.
+
+<Canvas of={TabsStories.Default} />
+
+## Props
+
+### TabsComponent
+
+- `tabs`: A collection of `TabComponent` instances. This is handled internally by Angular's `@ContentChildren` decorator.
+
+### TabComponent
+
+- `title`: The title of the tab, displayed in the tab header.
+- `isActive`: Boolean to indicate if the tab is currently active. Only one tab should be active at a time.
+- `disabled`: Boolean to disable the tab, preventing it from being selected.
+
+## Usage
+
+```html
+<isep-lib-tabs>
+  <isep-lib-tab title="Tab 1" [isActive]="true">Content for Tab 1</isep-lib-tab>
+  <isep-lib-tab title="Tab 2">Content for Tab 2</isep-lib-tab>
+  <isep-lib-tab title="Tab 3" [disabled]="true">Content for Tab 3</isep-lib-tab>
+</isep-lib-tabs>
+```
+To use `<isep-lib-tabs>` and `<isep-lib-tab>`, add the respective module to the project module imports:
+
+```typescript
+// app.module.ts
+import { TabsModule } from 'ngx-dissertation-components-lib';
+
+@NgModule({ 
+	imports: [TabsModule]
+})
+export class AppModule {}
+```
+
+### Examples
+- [Library Code GIT](https://github.com/carinaalasisep/ngx-dissertation-components-lib/tree/main/projects/ngx-isep-dissertation-components/src/lib/tabs)
+- [MFE example Code GIT](https://github.com/carinaalasisep/dissertation-checkout-mfe/blob/main/src/app/features/order/order.component.html)
+
+<Canvas of={TabsStories.WithDisabledTab} />
+<Canvas of={TabsStories.PreSelectedTab} />
+```

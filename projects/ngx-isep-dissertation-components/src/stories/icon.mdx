@@ -1,0 +1,55 @@
+import { Canvas, Meta } from '@storybook/blocks';
+ 
+import * as IconStories from './icon.stories';
+ 
+<Meta of={IconStories} />
+ 
+# Icon
+
+The `IconComponent` enables a list of icons available on the library.
+
+<Canvas of={IconStories.CloseIcon} />
+
+## Available icons
+
+The icons are available through an enum Icon.
+
+```typescript
+export enum Icon {
+    CLOSE = 'close',
+    FILTER = 'filter',
+    CHEVRON_RIGHT = 'chevron_right',
+    CHEVRON_LEFT = 'chevron_left',
+    HEART = 'heart',
+    SHOPPING_BAG = 'shoppingbag',
+    ARROW_RIGHT = 'arrowRight',
+  }
+```
+## Props
+- `color`: The color of the icon. Options are available through the IconColor enum: `BLACK`, `WHITE`, `CORAL`.
+- `icon`: The icon to display, of type Icon enum.
+
+## Usage
+
+```html
+<isep-lib-icon [color]="IconColor.WHITE" [icon]="Icon.CLOSE"></isep-lib-icon>
+
+```
+
+
+To use `<isep-lib-icon>` add the respective module to project module imports:
+
+```typescript
+// app.module.ts
+import { IconModule } from 'ngx-dissertation-components-lib';
+
+@NgModule({ 
+	imports: [IconModule]
+})
+export class AppModule {}
+```
+
+### Examples
+- [Library Code GIT](https://github.com/carinaalasisep/ngx-dissertation-components-lib/tree/main/projects/ngx-isep-dissertation-components/src/lib/icon)
+
+ 

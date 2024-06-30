@@ -1,0 +1,54 @@
+import { Canvas, Meta } from '@storybook/blocks';
+ 
+import * as ProductTileStories from './product-tile.stories';
+ 
+<Meta of={ProductTileStories} />
+ 
+# Product tile
+
+The `ProductTileComponent` is a component created to support the display of a product on the [Product Catalog MFE](https://github.com/carinaalasisep/dissertation-productcat-mfe/tree/main) and the [Checkout MFE](https://github.com/carinaalasisep/dissertation-checkout-mfe/tree/main).
+
+<Canvas of={ProductTileStories.Default} />
+
+## Props
+
+- `imageSrc`: The source of the image of the product, that will be displayed in 312x400.
+- `productCategory`: The name of the category of the product.
+- `productName`: The name of the product.
+- `finalPrice`: The final price of the product.
+- `priceWithoutPromo`: In the case of the product having a promotion, the original price of the product.
+- `hasTag`: Boolean to enable a tag on top of the product.
+- `tagColor`: The color of the tag.
+- `tagText`: The text of the tag.
+
+## Usage
+
+```html
+<isep-lib-product-tile
+  [imageSrc]="'https://via.placeholder.com/312x400'"
+  [hasTag]="true"
+  [tagColor]="'#1E2832'"
+  [tagText]="'SALE'"
+  [productCategory]="'Category'"
+  [productName]="'Product Name'"
+  [finalPrice]="100"
+  [priceWithoutPromo]="150"
+></isep-lib-product-tile>
+```
+To use `<isep-lib-product-tile>` add the respective module to project module imports:
+
+```typescript
+// app.module.ts
+import { ProductTileModule } from 'ngx-dissertation-components-lib';
+
+@NgModule({ 
+	imports: [ProductTileModule]
+})
+export class AppModule {}
+```
+
+### Examples
+- [Library Code GIT](https://github.com/carinaalasisep/ngx-dissertation-components-lib/tree/main/projects/ngx-isep-dissertation-components/src/lib/product-tile)
+- [MFE example Code GIT](https://github.com/carinaalasisep/dissertation-productcat-mfe/blob/main/src/app/features/product-listing/product-listing.component.html)
+
+ 
