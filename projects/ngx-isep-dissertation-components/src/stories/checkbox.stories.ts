@@ -2,6 +2,7 @@
 import { Meta, StoryObj } from '@storybook/angular';
 import { moduleMetadata } from '@storybook/angular';
 import { CheckboxComponent } from '../lib/checkbox/checkbox.component';
+import { userEvent, within, expect } from '@storybook/test';
 
 export default {
     title: 'Components/Checkbox',
@@ -24,20 +25,27 @@ type Story = StoryObj<CheckboxComponent>;
 export const Default: Story = {
     args: {
         checked: false,
-        label: 'Checkbox Label',
-    }
-};
-
-export const Checked: Story = {
-    args: {
-        checked: true,
-        label: 'Checkbox Label',
-    }
+        label: '',
+    },
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement);
+        const checkbox = canvas.getByRole('checkbox');
+        await userEvent.click(checkbox);
+        expect(checkbox).toBeChecked();
+      },
 };
 
 export const WithCustomLabel: Story = {
     args: {
         checked: false,
         label: 'Custom Label',
-    }
+    },
+    play: async ({ canvasElement }) => {
+      const canvas = within(canvasElement);
+      const checkbox = canvas.getByRole('checkbox');
+      const label = canvas.getByText('Custom Label');
+      await userEvent.click(checkbox);
+      expect(checkbox).toBeChecked();
+      expect(label).toBeInTheDocument();
+    },
 };
