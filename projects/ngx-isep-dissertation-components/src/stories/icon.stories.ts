@@ -6,7 +6,7 @@ import { CommonModule } from "@angular/common";
 import { IconComponent } from "../lib/icon/icon.component";
 import { Icon } from "../lib/icon/icon.enum";
 import { IconColor } from "../lib/icon/icon-color.enum";
-import { userEvent, within, expect } from "@storybook/test";
+import { within, expect } from "@storybook/test";
 
 export default {
   title: "Components/Icon",

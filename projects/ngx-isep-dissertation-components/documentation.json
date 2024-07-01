@@ -21,16 +21,6 @@
                 "defaultValue": "{\r\n  args: {\r\n    icon: Icon.ARROW_RIGHT,\r\n  },\r\n}"
             },
             {
-                "name": "Checked",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-isep-dissertation-components/src/stories/checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n    args: {\r\n        checked: true,\r\n        label: 'Checkbox Label',\r\n    }\r\n}"
-            },
-            {
                 "name": "ChevronLeftIcon",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -58,7 +48,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    icon: Icon.CLOSE,\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    icon: Icon.CLOSE,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const iconElement = canvas.getByRole(\"presentation\");\r\n    expect(iconElement).toBeInTheDocument();\r\n    expect(iconElement).toHaveStyle(\"color: black\");\r\n  },\r\n}"
             },
             {
                 "name": "CustomSize",
@@ -88,7 +78,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args: {\r\n        checked: false,\r\n        label: 'Checkbox Label',\r\n    }\r\n}"
+                "defaultValue": "{\r\n    args: {\r\n        checked: false,\r\n        label: '',\r\n    },\r\n    play: async ({ canvasElement }) => {\r\n        const canvas = within(canvasElement);\r\n        const checkbox = canvas.getByRole('checkbox');\r\n        await userEvent.click(checkbox);\r\n        expect(checkbox).toBeChecked();\r\n      },\r\n}"
             },
             {
                 "name": "Default",
@@ -148,7 +138,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.WHITE,\r\n    size: ButtonSize.SMALL,\r\n    label: 'Button',\r\n    disabled: true,\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.WHITE,\r\n    size: ButtonSize.SMALL,\r\n    label: 'Button',\r\n    disabled: true,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const button = canvas.getByRole('button', { name: 'Button' });\r\n    expect(button).toHaveAttribute('aria-disabled', 'true');\r\n  },\r\n}"
             },
             {
                 "name": "exampleOptions",
@@ -238,7 +228,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args: {\r\n        checked: false,\r\n        label: 'Custom Label',\r\n    }\r\n}"
+                "defaultValue": "{\r\n    args: {\r\n        checked: false,\r\n        label: 'Custom Label',\r\n    },\r\n    play: async ({ canvasElement }) => {\r\n      const canvas = within(canvasElement);\r\n      const checkbox = canvas.getByRole('checkbox');\r\n      const label = canvas.getByText('Custom Label');\r\n      await userEvent.click(checkbox);\r\n      expect(checkbox).toBeChecked();\r\n      expect(label).toBeInTheDocument();\r\n    },\r\n}"
             },
             {
                 "name": "WithDisabledTab",
@@ -288,7 +278,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.CORAL,\r\n    size: ButtonSize.LARGE,\r\n    label: 'Button',\r\n    icon: ButtonIcon.HEART,\r\n    disabled: false,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const button = canvas.getByRole('button', { name: 'Button' });\r\n    const icon = canvas.getByLabelText('icon');\r\n    expect(icon).toBeInTheDocument();\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.CORAL,\r\n    size: ButtonSize.LARGE,\r\n    label: 'Button',\r\n    icon: ButtonIcon.HEART,\r\n    disabled: false,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const button = canvas.getByRole('button', { name: 'icon Button' });\r\n    const icon = button.getElementsByClassName('button-icon').item(0);\r\n    expect(icon).toBeInTheDocument();\r\n  },\r\n}"
             },
             {
                 "name": "WithPromoPrice",
@@ -443,7 +433,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    icon: Icon.CLOSE,\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    icon: Icon.CLOSE,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const iconElement = canvas.getByRole(\"presentation\");\r\n    expect(iconElement).toBeInTheDocument();\r\n    expect(iconElement).toHaveStyle(\"color: black\");\r\n  },\r\n}"
                 },
                 {
                     "name": "FilterIcon",
@@ -474,38 +464,6 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\r\n  args: {\r\n    icon: Icon.SHOPPING_BAG,\r\n  },\r\n}"
-                }
-            ],
-            "projects/ngx-isep-dissertation-components/src/stories/checkbox.stories.ts": [
-                {
-                    "name": "Checked",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-isep-dissertation-components/src/stories/checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n    args: {\r\n        checked: true,\r\n        label: 'Checkbox Label',\r\n    }\r\n}"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-isep-dissertation-components/src/stories/checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n    args: {\r\n        checked: false,\r\n        label: 'Checkbox Label',\r\n    }\r\n}"
-                },
-                {
-                    "name": "WithCustomLabel",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-isep-dissertation-components/src/stories/checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n    args: {\r\n        checked: false,\r\n        label: 'Custom Label',\r\n    }\r\n}"
                 }
             ],
             "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts": [
@@ -559,7 +517,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.WHITE,\r\n    size: ButtonSize.SMALL,\r\n    label: 'Button',\r\n    disabled: true,\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.WHITE,\r\n    size: ButtonSize.SMALL,\r\n    label: 'Button',\r\n    disabled: true,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const button = canvas.getByRole('button', { name: 'Button' });\r\n    expect(button).toHaveAttribute('aria-disabled', 'true');\r\n  },\r\n}"
                 },
                 {
                     "name": "WithIcon",
@@ -569,7 +527,29 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.CORAL,\r\n    size: ButtonSize.LARGE,\r\n    label: 'Button',\r\n    icon: ButtonIcon.HEART,\r\n    disabled: false,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const button = canvas.getByRole('button', { name: 'Button' });\r\n    const icon = canvas.getByLabelText('icon');\r\n    expect(icon).toBeInTheDocument();\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.CORAL,\r\n    size: ButtonSize.LARGE,\r\n    label: 'Button',\r\n    icon: ButtonIcon.HEART,\r\n    disabled: false,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const button = canvas.getByRole('button', { name: 'icon Button' });\r\n    const icon = button.getElementsByClassName('button-icon').item(0);\r\n    expect(icon).toBeInTheDocument();\r\n  },\r\n}"
+                }
+            ],
+            "projects/ngx-isep-dissertation-components/src/stories/checkbox.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args: {\r\n        checked: false,\r\n        label: '',\r\n    },\r\n    play: async ({ canvasElement }) => {\r\n        const canvas = within(canvasElement);\r\n        const checkbox = canvas.getByRole('checkbox');\r\n        await userEvent.click(checkbox);\r\n        expect(checkbox).toBeChecked();\r\n      },\r\n}"
+                },
+                {
+                    "name": "WithCustomLabel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args: {\r\n        checked: false,\r\n        label: 'Custom Label',\r\n    },\r\n    play: async ({ canvasElement }) => {\r\n      const canvas = within(canvasElement);\r\n      const checkbox = canvas.getByRole('checkbox');\r\n      const label = canvas.getByText('Custom Label');\r\n      await userEvent.click(checkbox);\r\n      expect(checkbox).toBeChecked();\r\n      expect(label).toBeInTheDocument();\r\n    },\r\n}"
                 }
             ],
             "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts": [
@@ -873,16 +853,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "WithIcon",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-isep-dissertation-components/src/stories/checkbox.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Checked",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
