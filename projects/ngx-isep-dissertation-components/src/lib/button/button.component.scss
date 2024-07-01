@@ -1,114 +1,140 @@
-@import '@fontsource/open-sans';
-@import '../../../styles/abstract/functions.scss';
+@import "@fontsource/open-sans";
+@import "../../../styles/abstract/functions.scss";
 
 .button-container {
-	background-color: colors("black");
-	color: colors("white");
-	border: 1px solid colors("black");
-	font-family: "Open Sans";
-	border-radius: 0;
-	position: relative;
-	display: inline-flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	align-content: space-around;
-	width: inherit;
-	// height: inherit;
-	overflow: hidden;
-	word-break: keep-all;
-	cursor: pointer;
+  background-color: colors("black");
+  color: colors("white");
+  border: 1px solid colors("black");
+  font-family: "Open Sans";
+  border-radius: 0;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: space-around;
+  width: inherit;
+  // height: inherit;
+  overflow: hidden;
+  word-break: keep-all;
+  cursor: pointer;
 
-	&.large {
-		// padding: 14px 36px 15px 36px;
-		height: 48px;
-	}
+  &.large {
+    // padding: 14px 36px 15px 36px;
+    height: 48px;
+  }
 
-	&.medium {
-		// padding: 12px 32px 13px 32px;
-		height: 42px;
-	}
+  &.medium {
+    // padding: 12px 32px 13px 32px;
+    height: 42px;
+  }
 
-	&.small {
-		// padding: 9px 32px 10px 32px;
-		height: 36px;
-	}
+  &.small {
+    // padding: 9px 32px 10px 32px;
+    height: 36px;
+  }
 
-	.button-container-span {
-		display: flex;
-		align-items: center;
-		padding: 5px 15px;
+  .button-container-span {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
 
-		span {
-			transition: margin 0.25s ease-in-out, padding 0.25s ease-in-out;
-			will-change: opacity;
-			padding-bottom: 0;
-			display: block;
-			pointer-events: none;
-			border-color: transparent;
+    span {
+      transition:
+        margin 0.25s ease-in-out,
+        padding 0.25s ease-in-out;
+      will-change: opacity;
+      padding-bottom: 0;
+      display: block;
+      pointer-events: none;
+      border-color: transparent;
 
-			&::after {
-				position: absolute;
-				content: " ";
-				display: block;
-				width: 0;
-				height: 0;
-				bottom: 0;
-				opacity: 0;
-				transition: all 0.25s ease-in-out;
-				border-bottom: transparent;
-			}
-		}
+      &::after {
+        position: absolute;
+        content: " ";
+        display: block;
+        width: 0;
+        height: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: all 0.25s ease-in-out;
+        border-bottom: transparent;
+      }
+    }
 
-		&:hover span,
-		&:focus span {
-			// padding-bottom: 2px;
-			margin-top: -2px;
+    &:hover span,
+    &:focus span {
+      // padding-bottom: 2px;
+      margin-top: -2px;
 
-			&::after,
-			&:focus span::after {
-				width: 100%;
-				opacity: 1;
-			}
-		}
-	}
+      &::after,
+      &:focus span::after {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
 
-	&.black {
-		color: colors("white");
-		background: colors("black");
+  &.black {
+    color: colors("white");
+    background: colors("black");
 
-		&:active {
-			background: colors("black");
-			opacity: 0.75;
-		}
+    &:active {
+      background: colors("black");
+      opacity: 0.75;
+    }
 
-		span:after {
-			border-bottom: 1px solid colors("white");
-		}
+    span:after {
+      border-bottom: 1px solid colors("white");
+    }
 
-		&.disabled {
-			opacity: 0.5;
-			cursor: not-allowed;
-		}
-	}
+    &.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
 
-	&.white {
-		color: colors("black");
-		background: colors("off-white");
-		border: none;
-		font-weight: 700;
+  &.white {
+    color: colors("black");
+    background: colors("off-white");
+    border: none;
+    font-weight: 700;
 
-		&:active {
-			background: colors("off-white");
-		}
+    &:active {
+      background: colors("off-white");
+    }
 
-		span:after {
-			border-bottom: 1px solid colors("black");
-		}
+    span:after {
+      border-bottom: 1px solid colors("black");
+    }
 
-		&.disabled {
-			opacity: 0.5;
-			cursor: not-allowed;
-		}
-	}
+    &.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &.coral {
+    color: colors("white");
+    background: colors("coral");
+    border: none;
+    font-weight: 700;
+
+    &:active {
+      background: colors("coral");
+    }
+
+    span:after {
+      border-bottom: 1px solid colors("white");
+    }
+
+    &.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.button-icon {
+  margin: 5px 0 0 10px;
 }

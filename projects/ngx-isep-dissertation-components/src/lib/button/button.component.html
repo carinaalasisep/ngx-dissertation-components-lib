@@ -1,9 +1,12 @@
 <!-- HTML !-->
 <div
+  role="button"
+  [attr.aria-disabled]="disabled ? true : null"
   [ngClass]="{
     'button-container': true,
     white: color === white,
     black: color === black,
+    coral: color === coral,
     disabled: disabled === true,
     medium: size === medium,
     large: size === large,
@@ -12,8 +15,8 @@
 >
 <div *ngIf="icon">
   <!-- <isep-lib-icon [icon]="iconToDisplay!"></isep-lib-icon> -->
-    <div style="margin: 5px 0 0 10px" [innerHTML]="iconHtml"></div>
-  </div>
+  <div class="button-icon" [innerHTML]="iconHtml" aria-label="icon"></div>
+</div>
   <div class="button-container-span">
     <span>{{ label }}</span>
   </div>

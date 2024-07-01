@@ -78,7 +78,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.BLACK,\r\n    size: ButtonSize.MEDIUM,\r\n    label: 'Button',\r\n    disabled: false,\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.BLACK,\r\n    size: ButtonSize.MEDIUM,\r\n    label: 'Button',\r\n    disabled: false,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const button = canvas.getByRole('button', { name: 'Button' });\r\n\r\n    // Simulate a click event\r\n    await userEvent.click(button);\r\n\r\n    // Optionally, you can assert that the button was clicked\r\n    // This requires adding some way to verify the action occurred,\r\n    // such as checking for a change in the component state or a call to an action\r\n  },\r\n}"
             },
             {
                 "name": "Default",
@@ -191,16 +191,6 @@
                 "defaultValue": "{\r\n  args: {\r\n    icon: Icon.HEART,\r\n  },\r\n}"
             },
             {
-                "name": "PreSelectedOption",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n    args: {\r\n        options: exampleOptions,\r\n        label: 'Select an Option',\r\n        errorLabel: false,\r\n    }\r\n}"
-            },
-            {
                 "name": "PreSelectedOptions",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -228,7 +218,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\r\n  parameters: {\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
+                "defaultValue": "{\r\n  parameters: {\r\n    previewTabs: {\r\n      'storybook/docs/panel': {\r\n        hidden: false\r\n      }\r\n    },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "ShoppingBagIcon",
@@ -298,7 +288,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.CORAL,\r\n    size: ButtonSize.LARGE,\r\n    label: 'Button',\r\n    icon: ButtonIcon.HEART,\r\n    disabled: false,\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.CORAL,\r\n    size: ButtonSize.LARGE,\r\n    label: 'Button',\r\n    icon: ButtonIcon.HEART,\r\n    disabled: false,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const button = canvas.getByRole('button', { name: 'Button' });\r\n    const icon = canvas.getByLabelText('icon');\r\n    expect(icon).toBeInTheDocument();\r\n  },\r\n}"
             },
             {
                 "name": "WithPromoPrice",
@@ -559,7 +549,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.BLACK,\r\n    size: ButtonSize.MEDIUM,\r\n    label: 'Button',\r\n    disabled: false,\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.BLACK,\r\n    size: ButtonSize.MEDIUM,\r\n    label: 'Button',\r\n    disabled: false,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const button = canvas.getByRole('button', { name: 'Button' });\r\n\r\n    // Simulate a click event\r\n    await userEvent.click(button);\r\n\r\n    // Optionally, you can assert that the button was clicked\r\n    // This requires adding some way to verify the action occurred,\r\n    // such as checking for a change in the component state or a call to an action\r\n  },\r\n}"
                 },
                 {
                     "name": "Disabled",
@@ -579,7 +569,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.CORAL,\r\n    size: ButtonSize.LARGE,\r\n    label: 'Button',\r\n    icon: ButtonIcon.HEART,\r\n    disabled: false,\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.CORAL,\r\n    size: ButtonSize.LARGE,\r\n    label: 'Button',\r\n    icon: ButtonIcon.HEART,\r\n    disabled: false,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const button = canvas.getByRole('button', { name: 'Button' });\r\n    const icon = canvas.getByLabelText('icon');\r\n    expect(icon).toBeInTheDocument();\r\n  },\r\n}"
                 }
             ],
             "projects/ngx-isep-dissertation-components/src/stories/multi-select.stories.ts": [
@@ -678,16 +668,6 @@
                     "defaultValue": "[\r\n    { id: 1, name: 'Option 1' },\r\n    { id: 2, name: 'Option 2' },\r\n    { id: 3, name: 'Option 3' },\r\n]"
                 },
                 {
-                    "name": "PreSelectedOption",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n    args: {\r\n        options: exampleOptions,\r\n        label: 'Select an Option',\r\n        errorLabel: false,\r\n    }\r\n}"
-                },
-                {
                     "name": "WithErrorLabel",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -739,7 +719,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\r\n  parameters: {\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  parameters: {\r\n    previewTabs: {\r\n      'storybook/docs/panel': {\r\n        hidden: false\r\n      }\r\n    },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
                 }
             ]
         },
@@ -1113,16 +1093,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "exampleOptions",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PreSelectedOption",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
