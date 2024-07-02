@@ -108,7 +108,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: false,\r\n        tagColor: \"#1E2832\",\r\n        tagText: \"SALE\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 100.00,\r\n        priceWithoutPromo: undefined,\r\n    }\r\n}"
+                "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: false,\r\n        tagColor: \"#1E2832\",\r\n        tagText: \"SALE\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 100.00,\r\n        priceWithoutPromo: undefined,\r\n    },\r\n    play: async ({ canvasElement }) => {\r\n      const canvas = within(canvasElement);\r\n  \r\n      const img = canvas.getByRole('img');\r\n      expect(img).toBeInTheDocument();\r\n  \r\n      const category = canvas.getByText('Category');\r\n      expect(category).toBeInTheDocument();\r\n  \r\n      const name = canvas.getByText('Product Name');\r\n      expect(name).toBeInTheDocument();\r\n  \r\n      const price = canvas.getByText('$100.00');\r\n      expect(price).toBeInTheDocument();\r\n    }\r\n}"
             },
             {
                 "name": "Default",
@@ -118,7 +118,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args: {\r\n        options: exampleOptions,\r\n        label: 'Select an Option',\r\n        errorLabel: false,\r\n    }\r\n}"
+                "defaultValue": "{\r\n    args: {\r\n        options: exampleOptions,\r\n        label: 'Select an Option',\r\n        errorLabel: false,\r\n    },\r\n    play: async ({ canvasElement }) => {\r\n      const canvas = within(canvasElement);\r\n  \r\n      // Click the select to open dropdown\r\n      const selectElement = canvas.getByText('Select an Option');\r\n      await fireEvent.focus(selectElement);\r\n  \r\n      // Check if the options are present\r\n      const option1 = canvas.getByText('Option 1');\r\n      const option2 = canvas.getByText('Option 2');\r\n      const option3 = canvas.getByText('Option 3');\r\n  \r\n      expect(option1).toBeInTheDocument();\r\n      expect(option2).toBeInTheDocument();\r\n      expect(option3).toBeInTheDocument();\r\n    }\r\n}"
             },
             {
                 "name": "Default",
@@ -128,7 +128,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <isep-lib-tabs>\r\n        <isep-lib-tab title=\"Tab 1\" [isActive]=\"true\">Content for Tab 1</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 2\">Content for Tab 2</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 3\" [disabled]=\"true\">Content for Tab 3</isep-lib-tab>\r\n      </isep-lib-tabs>\r\n    `,\r\n  }),\r\n  args: {},\r\n}"
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <isep-lib-tabs>\r\n        <isep-lib-tab title=\"Tab 1\">Content for Tab 1</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 2\" [isActive]=\"true\">Content for Tab 2</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 3\">Content for Tab 3</isep-lib-tab>\r\n      </isep-lib-tabs>\r\n    `,\r\n  }),\r\n  args: {},\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n\r\n    // Check if all tabs are present\r\n    const tab1 = canvas.getByText('Tab 1' );\r\n    const tab2 = canvas.getByText('Tab 2' );\r\n    const tab3 = canvas.getByText('Tab 3' );\r\n\r\n    expect(tab1).toBeInTheDocument();\r\n    expect(tab2).toBeInTheDocument();\r\n    expect(tab3).toBeInTheDocument();\r\n    \r\n    // Check if the content for the active tab is displayed\r\n    await fireEvent.click(tab2);\r\n    const activeContent = canvas.getByText('Content for Tab 2');\r\n    expect(activeContent).toBeInTheDocument();\r\n  },\r\n}"
             },
             {
                 "name": "Disabled",
@@ -201,16 +201,6 @@
                 "defaultValue": "{\r\n  args: {\r\n    title: \"Select Options\",\r\n    options: exampleCheckedOptions,\r\n    errorLabel: false,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n\r\n    expect(canvas.getByText(\"Select Options\")).toBeVisible();\r\n    fireEvent.click(canvas.getByText(\"Select Options\"));\r\n\r\n    for (const option of exampleCheckedOptions) {\r\n      const optionElement = canvas.getByText(option.name);\r\n      expect(optionElement).toBeVisible();\r\n      if (option.isSelected) {\r\n        expect(\r\n          optionElement.parentElement?.querySelector('input[type=\"checkbox\"]')\r\n        ).toBeChecked();\r\n      } else {\r\n        expect(\r\n          optionElement.parentElement?.querySelector('input[type=\"checkbox\"]')\r\n        ).not.toBeChecked();\r\n      }\r\n    }\r\n  },\r\n}"
             },
             {
-                "name": "PreSelectedTab",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-isep-dissertation-components/src/stories/tabs.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <isep-lib-tabs>\r\n        <isep-lib-tab title=\"Tab 1\">Content for Tab 1</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 2\" [isActive]=\"true\">Content for Tab 2</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 3\">Content for Tab 3</isep-lib-tab>\r\n      </isep-lib-tabs>\r\n    `,\r\n  }),\r\n  args: {},\r\n}"
-            },
-            {
                 "name": "preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -248,7 +238,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <isep-lib-tabs>\r\n        <isep-lib-tab title=\"Tab 1\">Content for Tab 1</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 2\">Content for Tab 2</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 3\" [disabled]=\"true\" [isActive]=\"true\">Content for Tab 3</isep-lib-tab>\r\n      </isep-lib-tabs>\r\n    `,\r\n  }),\r\n  args: {},\r\n}"
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <isep-lib-tabs>\r\n        <isep-lib-tab title=\"Tab 1\">Content for Tab 1</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 2\">Content for Tab 2</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 3\" [disabled]=\"true\" [isActive]=\"true\">Content for Tab 3</isep-lib-tab>\r\n      </isep-lib-tabs>\r\n    `,\r\n  }),\r\n  args: {},\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n\r\n    // Check if all tabs are present\r\n    const tab1 = canvas.getByText('Tab 1' );\r\n    const tab2 = canvas.getByText('Tab 2' );\r\n    const tab3 = canvas.getByText('Tab 3' );\r\n\r\n    expect(tab1).toBeInTheDocument();\r\n    expect(tab2).toBeInTheDocument();\r\n    expect(tab3).toBeInTheDocument();\r\n\r\n    // Check if the third tab is disabled\r\n    expect(tab3).toHaveClass('disabled');\r\n\r\n    // Check if the content for the active tab is displayed\r\n    const activeContent = canvas.getByText('Content for Tab 1');\r\n    expect(activeContent).toBeInTheDocument();\r\n  },\r\n}"
             },
             {
                 "name": "WithErrorLabel",
@@ -278,7 +268,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args: {\r\n        options: exampleOptions,\r\n        label: 'Select an Option',\r\n        errorLabel: true,\r\n    }\r\n}"
+                "defaultValue": "{\r\n    args: {\r\n        options: exampleOptions,\r\n        label: 'Select an Option',\r\n        errorLabel: true,\r\n    },\r\n    play: async ({ canvasElement }) => {\r\n      const canvas = within(canvasElement);\r\n  \r\n      // Click the select to open dropdown\r\n      const selectElement = canvas.getByRole('select');\r\n      await fireEvent.focus(selectElement);\r\n  \r\n      // Check if the options are present\r\n      const option1 = canvas.getByText('Option 1');\r\n      const option2 = canvas.getByText('Option 2');\r\n      const option3 = canvas.getByText('Option 3');\r\n  \r\n      expect(option1).toBeInTheDocument();\r\n      expect(option2).toBeInTheDocument();\r\n      expect(option3).toBeInTheDocument();\r\n  \r\n      // Check if error class is present\r\n      expect(selectElement).toHaveClass('error');\r\n    }\r\n}"
             },
             {
                 "name": "WithIcon",
@@ -298,7 +288,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: true,\r\n        tagColor: \"#1E2832\",\r\n        tagText: \"SALE\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 80.00,\r\n        priceWithoutPromo: 100.00,\r\n    }\r\n}"
+                "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: true,\r\n        tagColor: \"#1E2832\",\r\n        tagText: \"SALE\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 80.00,\r\n        priceWithoutPromo: 100.00,\r\n    },\r\n    play: async ({ canvasElement }) => {\r\n      const canvas = within(canvasElement);\r\n  \r\n      const finalPrice = canvas.getByText('$80.00');\r\n      expect(finalPrice).toBeInTheDocument();\r\n  \r\n      const priceWithoutPromo = canvas.getByText('$100.00');\r\n      expect(priceWithoutPromo).toBeInTheDocument();\r\n    }\r\n}"
             },
             {
                 "name": "WithTag",
@@ -308,7 +298,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: true,\r\n        tagColor: \"#FF0000\",\r\n        tagText: \"NEW\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 100.00,\r\n        priceWithoutPromo: undefined,\r\n    }\r\n}"
+                "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: true,\r\n        tagColor: \"#FF0000\",\r\n        tagText: \"NEW\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 100.00,\r\n        priceWithoutPromo: undefined,\r\n    },\r\n    play: async ({ canvasElement }) => {\r\n      const canvas = within(canvasElement);\r\n  \r\n      const tag = canvas.getByText('NEW');\r\n      expect(tag).toBeInTheDocument();\r\n    }\r\n}"
             }
         ],
         "functions": [
@@ -652,7 +642,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: false,\r\n        tagColor: \"#1E2832\",\r\n        tagText: \"SALE\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 100.00,\r\n        priceWithoutPromo: undefined,\r\n    }\r\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: false,\r\n        tagColor: \"#1E2832\",\r\n        tagText: \"SALE\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 100.00,\r\n        priceWithoutPromo: undefined,\r\n    },\r\n    play: async ({ canvasElement }) => {\r\n      const canvas = within(canvasElement);\r\n  \r\n      const img = canvas.getByRole('img');\r\n      expect(img).toBeInTheDocument();\r\n  \r\n      const category = canvas.getByText('Category');\r\n      expect(category).toBeInTheDocument();\r\n  \r\n      const name = canvas.getByText('Product Name');\r\n      expect(name).toBeInTheDocument();\r\n  \r\n      const price = canvas.getByText('$100.00');\r\n      expect(price).toBeInTheDocument();\r\n    }\r\n}"
                 },
                 {
                     "name": "WithPromoPrice",
@@ -662,7 +652,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: true,\r\n        tagColor: \"#1E2832\",\r\n        tagText: \"SALE\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 80.00,\r\n        priceWithoutPromo: 100.00,\r\n    }\r\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: true,\r\n        tagColor: \"#1E2832\",\r\n        tagText: \"SALE\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 80.00,\r\n        priceWithoutPromo: 100.00,\r\n    },\r\n    play: async ({ canvasElement }) => {\r\n      const canvas = within(canvasElement);\r\n  \r\n      const finalPrice = canvas.getByText('$80.00');\r\n      expect(finalPrice).toBeInTheDocument();\r\n  \r\n      const priceWithoutPromo = canvas.getByText('$100.00');\r\n      expect(priceWithoutPromo).toBeInTheDocument();\r\n    }\r\n}"
                 },
                 {
                     "name": "WithTag",
@@ -672,7 +662,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: true,\r\n        tagColor: \"#FF0000\",\r\n        tagText: \"NEW\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 100.00,\r\n        priceWithoutPromo: undefined,\r\n    }\r\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        imageSrc: \"https://via.placeholder.com/312x400\",\r\n        hasTag: true,\r\n        tagColor: \"#FF0000\",\r\n        tagText: \"NEW\",\r\n        productCategory: \"Category\",\r\n        productName: \"Product Name\",\r\n        finalPrice: 100.00,\r\n        priceWithoutPromo: undefined,\r\n    },\r\n    play: async ({ canvasElement }) => {\r\n      const canvas = within(canvasElement);\r\n  \r\n      const tag = canvas.getByText('NEW');\r\n      expect(tag).toBeInTheDocument();\r\n    }\r\n}"
                 }
             ],
             "projects/ngx-isep-dissertation-components/src/stories/select.stories.ts": [
@@ -684,7 +674,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    args: {\r\n        options: exampleOptions,\r\n        label: 'Select an Option',\r\n        errorLabel: false,\r\n    }\r\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        options: exampleOptions,\r\n        label: 'Select an Option',\r\n        errorLabel: false,\r\n    },\r\n    play: async ({ canvasElement }) => {\r\n      const canvas = within(canvasElement);\r\n  \r\n      // Click the select to open dropdown\r\n      const selectElement = canvas.getByText('Select an Option');\r\n      await fireEvent.focus(selectElement);\r\n  \r\n      // Check if the options are present\r\n      const option1 = canvas.getByText('Option 1');\r\n      const option2 = canvas.getByText('Option 2');\r\n      const option3 = canvas.getByText('Option 3');\r\n  \r\n      expect(option1).toBeInTheDocument();\r\n      expect(option2).toBeInTheDocument();\r\n      expect(option3).toBeInTheDocument();\r\n    }\r\n}"
                 },
                 {
                     "name": "exampleOptions",
@@ -704,7 +694,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    args: {\r\n        options: exampleOptions,\r\n        label: 'Select an Option',\r\n        errorLabel: true,\r\n    }\r\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        options: exampleOptions,\r\n        label: 'Select an Option',\r\n        errorLabel: true,\r\n    },\r\n    play: async ({ canvasElement }) => {\r\n      const canvas = within(canvasElement);\r\n  \r\n      // Click the select to open dropdown\r\n      const selectElement = canvas.getByRole('select');\r\n      await fireEvent.focus(selectElement);\r\n  \r\n      // Check if the options are present\r\n      const option1 = canvas.getByText('Option 1');\r\n      const option2 = canvas.getByText('Option 2');\r\n      const option3 = canvas.getByText('Option 3');\r\n  \r\n      expect(option1).toBeInTheDocument();\r\n      expect(option2).toBeInTheDocument();\r\n      expect(option3).toBeInTheDocument();\r\n  \r\n      // Check if error class is present\r\n      expect(selectElement).toHaveClass('error');\r\n    }\r\n}"
                 }
             ],
             "projects/ngx-isep-dissertation-components/src/stories/tabs.stories.ts": [
@@ -716,17 +706,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <isep-lib-tabs>\r\n        <isep-lib-tab title=\"Tab 1\" [isActive]=\"true\">Content for Tab 1</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 2\">Content for Tab 2</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 3\" [disabled]=\"true\">Content for Tab 3</isep-lib-tab>\r\n      </isep-lib-tabs>\r\n    `,\r\n  }),\r\n  args: {},\r\n}"
-                },
-                {
-                    "name": "PreSelectedTab",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-isep-dissertation-components/src/stories/tabs.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <isep-lib-tabs>\r\n        <isep-lib-tab title=\"Tab 1\">Content for Tab 1</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 2\" [isActive]=\"true\">Content for Tab 2</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 3\">Content for Tab 3</isep-lib-tab>\r\n      </isep-lib-tabs>\r\n    `,\r\n  }),\r\n  args: {},\r\n}"
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <isep-lib-tabs>\r\n        <isep-lib-tab title=\"Tab 1\">Content for Tab 1</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 2\" [isActive]=\"true\">Content for Tab 2</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 3\">Content for Tab 3</isep-lib-tab>\r\n      </isep-lib-tabs>\r\n    `,\r\n  }),\r\n  args: {},\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n\r\n    // Check if all tabs are present\r\n    const tab1 = canvas.getByText('Tab 1' );\r\n    const tab2 = canvas.getByText('Tab 2' );\r\n    const tab3 = canvas.getByText('Tab 3' );\r\n\r\n    expect(tab1).toBeInTheDocument();\r\n    expect(tab2).toBeInTheDocument();\r\n    expect(tab3).toBeInTheDocument();\r\n    \r\n    // Check if the content for the active tab is displayed\r\n    await fireEvent.click(tab2);\r\n    const activeContent = canvas.getByText('Content for Tab 2');\r\n    expect(activeContent).toBeInTheDocument();\r\n  },\r\n}"
                 },
                 {
                     "name": "WithDisabledTab",
@@ -736,7 +716,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <isep-lib-tabs>\r\n        <isep-lib-tab title=\"Tab 1\">Content for Tab 1</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 2\">Content for Tab 2</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 3\" [disabled]=\"true\" [isActive]=\"true\">Content for Tab 3</isep-lib-tab>\r\n      </isep-lib-tabs>\r\n    `,\r\n  }),\r\n  args: {},\r\n}"
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <isep-lib-tabs>\r\n        <isep-lib-tab title=\"Tab 1\">Content for Tab 1</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 2\">Content for Tab 2</isep-lib-tab>\r\n        <isep-lib-tab title=\"Tab 3\" [disabled]=\"true\" [isActive]=\"true\">Content for Tab 3</isep-lib-tab>\r\n      </isep-lib-tabs>\r\n    `,\r\n  }),\r\n  args: {},\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n\r\n    // Check if all tabs are present\r\n    const tab1 = canvas.getByText('Tab 1' );\r\n    const tab2 = canvas.getByText('Tab 2' );\r\n    const tab3 = canvas.getByText('Tab 3' );\r\n\r\n    expect(tab1).toBeInTheDocument();\r\n    expect(tab2).toBeInTheDocument();\r\n    expect(tab3).toBeInTheDocument();\r\n\r\n    // Check if the third tab is disabled\r\n    expect(tab3).toHaveClass('disabled');\r\n\r\n    // Check if the content for the active tab is displayed\r\n    const activeContent = canvas.getByText('Content for Tab 1');\r\n    expect(activeContent).toBeInTheDocument();\r\n  },\r\n}"
                 }
             ],
             "projects/ngx-isep-dissertation-components/.storybook/preview.ts": [
@@ -1183,16 +1163,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Default",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-isep-dissertation-components/src/stories/tabs.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "PreSelectedTab",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
