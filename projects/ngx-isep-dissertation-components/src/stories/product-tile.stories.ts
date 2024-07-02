@@ -4,6 +4,7 @@ import { moduleMetadata } from '@storybook/angular';
 import { DecimalPipe } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { ProductTileComponent } from '../lib/product-tile/product-tile.component';
+import { within, expect, fireEvent } from "@storybook/test";
 
 export default {
     title: 'Components/ProductTile',
@@ -39,6 +40,21 @@ export const Default: Story = {
         productName: "Product Name",
         finalPrice: 100.00,
         priceWithoutPromo: undefined,
+    },
+    play: async ({ canvasElement }) => {
+      const canvas = within(canvasElement);
+  
+      const img = canvas.getByRole('img');
+      expect(img).toBeInTheDocument();
+  
+      const category = canvas.getByText('Category');
+      expect(category).toBeInTheDocument();
+  
+      const name = canvas.getByText('Product Name');
+      expect(name).toBeInTheDocument();
+  
+      const price = canvas.getByText('$100.00');
+      expect(price).toBeInTheDocument();
     }
 };
 
@@ -52,6 +68,12 @@ export const WithTag: Story = {
         productName: "Product Name",
         finalPrice: 100.00,
         priceWithoutPromo: undefined,
+    },
+    play: async ({ canvasElement }) => {
+      const canvas = within(canvasElement);
+  
+      const tag = canvas.getByText('NEW');
+      expect(tag).toBeInTheDocument();
     }
 };
 
@@ -65,5 +87,14 @@ export const WithPromoPrice: Story = {
         productName: "Product Name",
         finalPrice: 80.00,
         priceWithoutPromo: 100.00,
+    },
+    play: async ({ canvasElement }) => {
+      const canvas = within(canvasElement);
+  
+      const finalPrice = canvas.getByText('$80.00');
+      expect(finalPrice).toBeInTheDocument();
+  
+      const priceWithoutPromo = canvas.getByText('$100.00');
+      expect(priceWithoutPromo).toBeInTheDocument();
     }
 };

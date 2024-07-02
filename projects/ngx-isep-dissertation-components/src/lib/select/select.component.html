@@ -5,10 +5,10 @@
       (change)="onSelected(items.value)" 
       (focus)="dropdownOpen = true" 
       (blur)="dropdownOpen = false" 
-      [class.error]="errorLabel">
+      [class.error]="errorLabel"
+      role="select">
       <option value="" style="color:grey" selected disabled hidden>{{label}}</option>
       <option style="color:black" *ngFor="let option of options" [value]="option.id">{{option.name}}</option>
     </select>
-    <!-- <span class="material-icons-round custom-arrow" [class.open]="dropdownOpen">chevron_right</span> -->
     <svg class="material-icons-round custom-arrow" [class.open]="dropdownOpen" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="black" d="M9.29 6.71a.996.996 0 0 0 0 1.41L13.17 12l-3.88 3.88a.996.996 0 1 0 1.41 1.41l4.59-4.59a.996.996 0 0 0 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01"/></svg>
   </div>
