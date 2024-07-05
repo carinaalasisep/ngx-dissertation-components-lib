@@ -34,9 +34,9 @@ const exampleOptions: MultiSelectModel[] = [
 ];
 
 const exampleCheckedOptions: MultiSelectModel[] = [
-    { id: 1, name: "Option 1", isSelected: true },
-      { id: 2, name: "Option 2", isSelected: false },
-      { id: 3, name: "Option 3", isSelected: true },
+  { id: 1, name: "Option 1", isSelected: true },
+  { id: 2, name: "Option 2", isSelected: false },
+  { id: 3, name: "Option 3", isSelected: true },
 ];
 
 export const Default: Story = {

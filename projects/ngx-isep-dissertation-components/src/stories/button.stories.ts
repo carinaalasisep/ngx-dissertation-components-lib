@@ -48,12 +48,7 @@ export const Default: Story = {
     const canvas = within(canvasElement);
     const button = canvas.getByRole('button', { name: 'Button' });
 
-    // Simulate a click event
     await userEvent.click(button);
-
-    // Optionally, you can assert that the button was clicked
-    // This requires adding some way to verify the action occurred,
-    // such as checking for a change in the component state or a call to an action
   },
 };
 
