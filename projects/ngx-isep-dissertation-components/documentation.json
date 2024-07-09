@@ -68,7 +68,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.BLACK,\r\n    size: ButtonSize.MEDIUM,\r\n    label: 'Button',\r\n    disabled: false,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const button = canvas.getByRole('button', { name: 'Button' });\r\n\r\n    // Simulate a click event\r\n    await userEvent.click(button);\r\n\r\n    // Optionally, you can assert that the button was clicked\r\n    // This requires adding some way to verify the action occurred,\r\n    // such as checking for a change in the component state or a call to an action\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.BLACK,\r\n    size: ButtonSize.MEDIUM,\r\n    label: 'Button',\r\n    disabled: false,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const button = canvas.getByRole('button', { name: 'Button' });\r\n\r\n    await userEvent.click(button);\r\n  },\r\n}"
             },
             {
                 "name": "Default",
@@ -148,7 +148,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "MultiSelectModel[]",
-                "defaultValue": "[\r\n    { id: 1, name: \"Option 1\", isSelected: true },\r\n      { id: 2, name: \"Option 2\", isSelected: false },\r\n      { id: 3, name: \"Option 3\", isSelected: true },\r\n]"
+                "defaultValue": "[\r\n  { id: 1, name: \"Option 1\", isSelected: true },\r\n  { id: 2, name: \"Option 2\", isSelected: false },\r\n  { id: 3, name: \"Option 3\", isSelected: true },\r\n]"
             },
             {
                 "name": "exampleOptions",
@@ -536,7 +536,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.BLACK,\r\n    size: ButtonSize.MEDIUM,\r\n    label: 'Button',\r\n    disabled: false,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const button = canvas.getByRole('button', { name: 'Button' });\r\n\r\n    // Simulate a click event\r\n    await userEvent.click(button);\r\n\r\n    // Optionally, you can assert that the button was clicked\r\n    // This requires adding some way to verify the action occurred,\r\n    // such as checking for a change in the component state or a call to an action\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    color: ButtonColor.BLACK,\r\n    size: ButtonSize.MEDIUM,\r\n    label: 'Button',\r\n    disabled: false,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const button = canvas.getByRole('button', { name: 'Button' });\r\n\r\n    await userEvent.click(button);\r\n  },\r\n}"
                 },
                 {
                     "name": "Disabled",
@@ -600,7 +600,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "MultiSelectModel[]",
-                    "defaultValue": "[\r\n    { id: 1, name: \"Option 1\", isSelected: true },\r\n      { id: 2, name: \"Option 2\", isSelected: false },\r\n      { id: 3, name: \"Option 3\", isSelected: true },\r\n]"
+                    "defaultValue": "[\r\n  { id: 1, name: \"Option 1\", isSelected: true },\r\n  { id: 2, name: \"Option 2\", isSelected: false },\r\n  { id: 3, name: \"Option 3\", isSelected: true },\r\n]"
                 },
                 {
                     "name": "exampleOptions",

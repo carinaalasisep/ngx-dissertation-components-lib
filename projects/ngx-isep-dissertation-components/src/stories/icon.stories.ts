@@ -88,6 +88,15 @@ export const ArrowRightIcon: Story = {
   },
 };
 
+export const ArrowProfileIcon: Story = {
+  args: {
+    icon: Icon.PROFILE,
+  },
+  play: async ({ canvasElement }) => {
+    validateIconPresence(canvasElement);
+  },
+};
+
 function validateIconPresence(canvasElement: HTMLElement) {
   const canvas = within(canvasElement);
   const iconElement = canvas.getByRole('img', { name: 'Icon' });

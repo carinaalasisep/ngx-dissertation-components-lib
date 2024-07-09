@@ -6,4 +6,5 @@ export enum Icon {
     HEART = 'heart',
     SHOPPING_BAG = 'shoppingbag',
     ARROW_RIGHT = 'arrowRight',
+    PROFILE = 'profile'
   }
