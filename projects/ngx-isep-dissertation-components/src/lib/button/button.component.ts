@@ -34,7 +34,6 @@ export class ButtonComponent implements OnChanges, OnInit {
 	@Output() buttonClick = new EventEmitter<void>();
 
 	@HostBinding('class') hostClass = 'button-container';
-	// iconToDisplay?: Icon;
 	medium: ButtonSize = ButtonSize.MEDIUM;
 	large: ButtonSize = ButtonSize.LARGE;
 	small: ButtonSize = ButtonSize.SMALL;
@@ -43,7 +42,6 @@ export class ButtonComponent implements OnChanges, OnInit {
 
 	ngOnInit(): void {
 		if(this.icon){
-			// this.iconToDisplay = this.castIconToButtonIcon(this.icon);
 			this.getIconHTML(this.icon!);
 		}
 	}
@@ -56,14 +54,9 @@ export class ButtonComponent implements OnChanges, OnInit {
 		);
 
 		if(this.icon){
-			// this.iconToDisplay = this.castIconToButtonIcon(this.icon);
 			this.getIconHTML(this.icon!);
 		}
 	}
-
-	// castIconToButtonIcon(icon: ButtonIcon): Icon {
-	// 	return icon as unknown as Icon;
-	//   }
 
 	updateHostClass(
 		size: ButtonSize,

@@ -1,6 +1,11 @@
 {
   "name": "ngx-isep-dissertation-libs",
-  "version": "0.0.0",
+  "version": "0.0.2",
+  "author": "carinaalasisep",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carinaalasisep/ngx-dissertation-components-lib"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
