@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-            node-version: 19
+          node-version: 20
 
       - name: Install Angular CLI
         run: npm install -g @angular/cli
@@ -24,11 +24,29 @@ jobs:
       - name: Build Angular Project
         run: ng build ngx-isep-dissertation-components
 
-      - name: Publish to Npm
+      - name: Check if version exists on npm
+        id: check-version
         run: |
-            cd dist/ngx-isep-dissertation-components
-            npm pack
-            npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}
-            npm publish ngx-isep-dissertation-components-0.0.4.tgz
+          cd projects/ngx-isep-dissertation-components
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          NPM_VERSIONS=$(npm view $PACKAGE_NAME versions --json)
+          if echo $NPM_VERSIONS | jq -e ". | index(\"$PACKAGE_VERSION\")" > /dev/null; then
+            echo "Version $PACKAGE_VERSION already exists on npm. Skipping publish."
+            echo "publish=false" >> $GITHUB_ENV
+          else
+            echo "Version $PACKAGE_VERSION does not exist on npm. Proceeding to publish."
+            echo "publish=true" >> $GITHUB_ENV
+          fi
         env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: Publish to Npm
+        if: env.publish == 'true'
+        run: |
+          cd dist/ngx-isep-dissertation-components
+          npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}
+          npm pack
+          npm publish ngx-isep-dissertation-components-0.0.4.tgz
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
