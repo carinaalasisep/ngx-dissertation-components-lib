@@ -1,5 +1,11 @@
 name: Publish Angular Package
 
+on:
+  workflow_run:
+    workflows: [Chromatic]
+    types:
+      - completed
+
 jobs:
   publish:
     runs-on: ubuntu-latest
