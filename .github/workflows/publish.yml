@@ -22,14 +22,11 @@ jobs:
         run: npm ci
 
       - name: Build Angular Project
-        run: ng build
-
-      - name: Change directory
-        run: |
-            cd dist/ngx-isep-dissertation-components
+        run: ng build ngx-isep-dissertation-components
 
       - name: Publish to Npm
         run: |
+            cd dist/ngx-isep-dissertation-components
             npm pack
             npm publish ngx-isep-dissertation-components-0.0.4.tgz
         env:
