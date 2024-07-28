@@ -11,6 +11,16 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "ArrowProfileIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    icon: Icon.PROFILE,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    validateIconPresence(canvasElement);\r\n  },\r\n}"
+            },
+            {
                 "name": "ArrowRightIcon",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -189,6 +199,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    icon: Icon.HEART,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    validateIconPresence(canvasElement);\r\n  },\r\n}"
+            },
+            {
+                "name": "Password",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    width: 245,\r\n    height: 32,\r\n    type: 'password',\r\n    value: '',\r\n    placeholder: 'Enter password',\r\n    errorLabel: false,\r\n  }, play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const inputElement = canvas.getByRole('textbox');\r\n    const toggleIcon = canvas.getByRole('button');\r\n\r\n    // Initial state should be password\r\n    expect(inputElement).toHaveAttribute('type', 'password');\r\n\r\n    // Click the toggle icon to show the password\r\n    fireEvent.click(toggleIcon);\r\n    expect(inputElement).toHaveAttribute('type', 'text');\r\n\r\n    // Click the toggle icon again to hide the password\r\n    fireEvent.click(toggleIcon);\r\n    expect(inputElement).toHaveAttribute('type', 'password');\r\n  }\r\n}"
             },
             {
                 "name": "PreSelectedOptions",
@@ -425,6 +445,16 @@
         "groupedVariables": {
             "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts": [
                 {
+                    "name": "ArrowProfileIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    icon: Icon.PROFILE,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    validateIconPresence(canvasElement);\r\n  },\r\n}"
+                },
+                {
                     "name": "ArrowRightIcon",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -515,6 +545,16 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\r\n  args: {\r\n    width: 245,\r\n    height: 32,\r\n    placeholder: \"Enter text\",\r\n    errorLabel: false,\r\n  },\r\n  play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const inputElement = canvas.getByRole(\"textbox\");\r\n\r\n    // Interaction test example: input value and check if it's reflected\r\n    fireEvent.input(inputElement, { target: { value: \"Test input\" } });\r\n    expect(inputElement).toHaveValue(\"Test input\");\r\n  },\r\n}"
+                },
+                {
+                    "name": "Password",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    width: 245,\r\n    height: 32,\r\n    type: 'password',\r\n    value: '',\r\n    placeholder: 'Enter password',\r\n    errorLabel: false,\r\n  }, play: async ({ canvasElement }) => {\r\n    const canvas = within(canvasElement);\r\n    const inputElement = canvas.getByRole('textbox');\r\n    const toggleIcon = canvas.getByRole('button');\r\n\r\n    // Initial state should be password\r\n    expect(inputElement).toHaveAttribute('type', 'password');\r\n\r\n    // Click the toggle icon to show the password\r\n    fireEvent.click(toggleIcon);\r\n    expect(inputElement).toHaveAttribute('type', 'text');\r\n\r\n    // Click the toggle icon again to hide the password\r\n    fireEvent.click(toggleIcon);\r\n    expect(inputElement).toHaveAttribute('type', 'password');\r\n  }\r\n}"
                 },
                 {
                     "name": "WithErrorLabel",
@@ -952,6 +992,16 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "ArrowProfileIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "ArrowRightIcon",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -1033,6 +1083,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-isep-dissertation-components/src/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Password",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

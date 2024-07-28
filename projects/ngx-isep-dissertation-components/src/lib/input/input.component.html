@@ -1,7 +1,7 @@
 <div [ngStyle]="{ width: width + 'px', height: height + 'px', position: 'relative' }">
     <input
       #inputElement
-      type="text"
+      [type]="type"
       [ngStyle]="{ width: width + 'px', height: (height - 2) + 'px' }"
       (input)="onInput($event)"
       [value]="value"
@@ -9,5 +9,13 @@
       [class.error]="errorLabel"
       (focus)="onFocus()"
       (blur)="onBlur()"
+      role="textbox"
     />
+    <isep-lib-icon *ngIf="actualType === 'password'"
+    [icon]="isPasswordVisible ? eyeSlash : eye"
+    (click)="togglePasswordVisibility()"
+    class="toggle-password-icon"
+    [ngStyle]="{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', cursor: 'pointer' }"
+    role="button">
+    </isep-lib-icon>
   </div>

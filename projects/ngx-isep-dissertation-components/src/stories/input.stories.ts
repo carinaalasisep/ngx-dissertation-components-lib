@@ -5,6 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { InputComponent } from "../lib/input/input.component";
 import { within, expect, fireEvent } from "@storybook/test";
+import { IconModule } from "../public-api";
 
 export default {
   title: "Components/Input",
@@ -12,7 +13,7 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [InputComponent],
-      imports: [BrowserModule, FormsModule],
+      imports: [BrowserModule, FormsModule, IconModule],
     }),
   ],
   argTypes: {
@@ -21,6 +22,7 @@ export default {
     placeholder: { control: "text" },
     errorLabel: { control: "boolean" },
     valueChange: { action: "valueChange" },
+    type: { action: "text" }
   },
 } as Meta;
 
@@ -71,4 +73,28 @@ export const CustomSize: Story = {
     expect(inputContainer).toHaveStyle(`width: 300px`);
     expect(inputContainer).toHaveStyle(`height: 40px`);
   },
+};
+
+export const Password: Story = {
+  args: {
+    width: 245,
+    height: 32,
+    type: 'password',
+    errorLabel: false,
+  }, play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const inputElement = canvas.getByRole('textbox');
+    const toggleIcon = canvas.getByRole('button');
+
+    // Initial state should be password
+    expect(inputElement).toHaveAttribute('type', 'password');
+
+    // Click the toggle icon to show the password
+    fireEvent.click(toggleIcon);
+    expect(inputElement).toHaveAttribute('type', 'text');
+
+    // Click the toggle icon again to hide the password
+    fireEvent.click(toggleIcon);
+    expect(inputElement).toHaveAttribute('type', 'password');
+  }
 };
