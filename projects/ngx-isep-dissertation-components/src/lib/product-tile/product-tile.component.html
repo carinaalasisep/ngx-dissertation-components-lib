@@ -8,15 +8,18 @@
     <div class="product-tile-info">
         <div class="product-tile-info-category">
             {{productCategory}}</div>
-        <div class="product-tile-info-price">
-            ${{finalPriceToDisplay}}</div>
-        <div *ngIf="priceWithoutPromo !== undefined">
+        <div *ngIf="priceWithoutPromo !== undefined; else regularPrice">
+            <div class="product-tile-info-price-coral">
+                ${{finalPriceToDisplay}}</div>
             <div class="product-tile-info-price-no-promo">
                 ${{priceWithoutPromoToDisplay}}</div>
         </div>
+        <ng-template #regularPrice>
+            <div  class="product-tile-info-price-regular">
+                ${{finalPriceToDisplay}}</div>
+        </ng-template>
 
-        <div
-        class="product-tile-info-name">
+        <div class="product-tile-info-name">
             {{productName}}</div>
     </div>
 </div>

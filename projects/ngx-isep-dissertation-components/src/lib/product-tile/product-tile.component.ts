@@ -17,7 +17,6 @@ export class ProductTileComponent implements OnInit {
   @Input() priceWithoutPromo: number | undefined;
   finalPriceToDisplay: string | null = '';
   priceWithoutPromoToDisplay: string | null = '';
-  isRed: boolean = false;
 
   constructor(private decimalPipe: DecimalPipe) {
   }
@@ -27,7 +26,6 @@ export class ProductTileComponent implements OnInit {
 
     if (this.priceWithoutPromo) {
       this.priceWithoutPromoToDisplay = this.decimalPipe.transform(this.priceWithoutPromo, '1.2-2');
-      this.isRed = true;
     }
   }
 }
