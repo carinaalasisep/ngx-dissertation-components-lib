@@ -47,6 +47,6 @@ jobs:
           cd dist/ngx-isep-dissertation-components
           npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}
           npm pack
-          npm publish ngx-isep-dissertation-components-0.0.6.tgz
+          npm publish ngx-isep-dissertation-components-15.0.1.tgz
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
